@@ -22,8 +22,8 @@ COMMENT ON TABLE environmental.noaa_globe IS '{
 
 SELECT obj_description('environmental.noaa_globe' ::regclass) ::json;
 
--- index
-CREATE INDEX noaa_globe_gix
+-- index (rast)
+CREATE INDEX noaa_globe_rast_idx
 	ON environmental.noaa_globe USING GIST (ST_ConvexHull(rast));
 
 -- public.raster_columns
