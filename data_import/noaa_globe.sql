@@ -36,8 +36,11 @@ ALTER TABLE environmental.noaa_globe
 -- MView (filter and projection)
 DROP MATERIALIZED VIEW IF EXISTS  	environmental.noaa_globe_germany_mview CASCADE;
 CREATE MATERIALIZED VIEW         	environmental.noaa_globe_germany_mview AS
-	SELECT	rid, ST_TRANSFORM(geom,3035) AS geom
+	SELECT	rid, ST_TRANSFORM(ng.rast,3035) AS rast
 	FROM	environmental.noaa_globe AS ng,
-		political_boundary.vg250_1_sta_union_mview AS vg,
-	WHERE	vg.geom && ng.geom AND
-		ST_CONTAINS(vg.geom,ng.geom);
+		political_boundary.bkg_vg250_1_sta_union_mview AS vg
+	WHERE	vg.geom && ST_TRANSFORM(ST_ConvexHull(ng.rast),3035);
+
+-- index (rast)
+CREATE INDEX noaa_globe_germany_mview_rast_idx
+	ON environmental.noaa_globe_germany_mview USING GIST (ST_ConvexHull(rast));
