@@ -32,3 +32,12 @@ SELECT AddRasterConstraints('environmental'::name, 'noaa_globe'::name, 'rast'::n
 -- grant
 ALTER TABLE environmental.noaa_globe
 	OWNER TO oeuser;
+
+-- MView (filter and projection)
+DROP MATERIALIZED VIEW IF EXISTS  	environmental.noaa_globe_germany_mview CASCADE;
+CREATE MATERIALIZED VIEW         	environmental.noaa_globe_germany_mview AS
+	SELECT	rid, ST_TRANSFORM(geom,3035) AS geom
+	FROM	environmental.noaa_globe AS ng,
+		political_boundary.vg250_1_sta_union_mview AS vg,
+	WHERE	vg.geom && ng.geom AND
+		ST_CONTAINS(vg.geom,ng.geom);
