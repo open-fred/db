@@ -1,0 +1,30 @@
+# Setup documentation
+
+# 1. Download zip file from http://www.ngdc.noaa.gov/mgg/topo/DATATILES/elev/all10g.zip and unzip
+
+# 2. Download hdr files from http://www.ngdc.noaa.gov/mgg/topo/elev/esri/hdr/ and attach to data
+
+# 3. Import into QGIS and validate
+
+# 4. Safe as geotiff raster files
+
+# 5. Import in database with raster2pgsql
+# Import comands
+	raster2pgsql -c -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_a.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_b.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_c.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_d.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_e.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_f.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_g.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_h.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_i.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_j.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_k.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_l.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_m.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_n.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_o.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_p.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+
+# 6. Add metadata and grant acess
