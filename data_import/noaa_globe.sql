@@ -6,7 +6,7 @@ COMMENT ON TABLE environmental.noaa_globe IS '{
 		"URL":  "http://www.ngdc.noaa.gov/mgg/topo/globe.html" }],
 	"Reference date": "01.01.1999",
 	"Date of collection": "24.10.2016",
-	"Original file": "http://www.ngdc.noaa.gov/mgg/topo/DATATILES/elev/all10g.zip",
+	"Original file": "http://www.ngdc.noaa.gov/mgg/topo/DATATILES/elev/all10g.zip imported with https://github.com/open-fred/db/blob/master/data_import/setup_noaa_globe_raster.txt",
 	"Spatial resolution": ["Global"],
 	"Description": ["A 30-arc-second (1-km) gridded, quality-controlled global Digital Elevation Model (DEM)"],
 	"Column": [
