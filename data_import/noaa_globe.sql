@@ -22,6 +22,13 @@ COMMENT ON TABLE environmental.noaa_globe IS '{
 
 SELECT obj_description('environmental.noaa_globe' ::regclass) ::json;
 
+-- index
+CREATE INDEX noaa_globe_gix
+	ON environmental.noaa_globe USING GIST (ST_ConvexHull(rast));
+
+-- public.raster_columns
+SELECT AddRasterConstraints('environmental'::name, 'noaa_globe'::name, 'rast'::name, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE);
+
 -- grant
 ALTER TABLE environmental.noaa_globe
 	OWNER TO oeuser;
