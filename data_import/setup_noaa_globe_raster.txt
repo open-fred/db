@@ -9,7 +9,7 @@
 # 4. Safe as geotiff raster files
 
 # 5. Import in database with raster2pgsql
-# Import comands
+# Import commands
 	raster2pgsql -c -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_a.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
 	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_b.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
 	raster2pgsql -a -s 4326 -t 500x500 C:\temp\noaa_globe\noaa_globe_10_c.tif environmental.noaa_globe|  psql -U ludwig_huelk -d oedb -h localhost -p 5555

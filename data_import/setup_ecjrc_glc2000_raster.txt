@@ -1,0 +1,11 @@
+# Setup documentation
+
+# 1. Download zip file from http://forobs.jrc.ec.europa.eu/products/glc2000/products.php -> http://forobs.jrc.ec.europa.eu/products/glc2000/products/glc2000_v1_1_Tiff.zip and unzip
+
+# 2. Import into QGIS and validate
+
+# 3. Import in database with raster2pgsql
+# Import command
+	raster2pgsql -c -s 4326 -t 100x100 C:\temp\ecjrc_glc2000\global\ecjrc_glc2000.tif environmental.ecjrc_glc2000 |  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+
+# 6. Add metadata and grant acess
