@@ -1,0 +1,29 @@
+# Setup documentation
+
+# 1. Download files from 
+http://www.fao.org/soils-portal/soil-survey/soil-maps-and-databases/harmonized-world-soil-database-v12/en/
+
+# 2. Import into QGIS and validate
+
+# 3. Safe as geotiff raster files
+
+# 4. Import in database with raster2pgsql
+# Import commands
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\soil_quality\sq1.tif environmental.fao_hwsd_sq_nutav|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\soil_quality\sq2.tif environmental.fao_hwsd_sq_nutrc|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\soil_quality\sq3.tif environmental.fao_hwsd_sq_root|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\soil_quality\sq4.tif environmental.fao_hwsd_sq_oxy|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\soil_quality\sq5.tif environmental.fao_hwsd_sq_salt|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\soil_quality\sq6.tif environmental.fao_hwsd_sq_toxic|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\soil_quality\sq7.tif environmental.fao_hwsd_sq_work|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\landuse_landcover\CULTRF_2000.tif environmental.fao_hwsd_lulc_cultrf|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\landuse_landcover\CULTIR_2000.tif environmental.fao_hwsd_lulc_cultir|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\landuse_landcover\CULT_2000.tif environmental.fao_hwsd_lulc_cult|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\landuse_landcover\FOR_2000.tif environmental.fao_hwsd_lulc_for|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\landuse_landcover\GRS_2000.tif environmental.fao_hwsd_lulc_grs|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\landuse_landcover\URB_2000.tif environmental.fao_hwsd_lulc_urb|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\landuse_landcover\NVG_2000.tif environmental.fao_hwsd_lulc_nvg|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+	raster2pgsql -c -s 4326 -t 50x50 F:\oedb\environment\fao_hwsd\landuse_landcover\WAT_2000.tif environmental.fao_hwsd_lulc_wat|  psql -U ludwig_huelk -d oedb -h localhost -p 5555
+
+# 5. Add metadata and grant access and rasterreg
