@@ -1,0 +1,3 @@
+ogr2ogr -f "PostgreSQL" PG:"dbname=oedb user=" \Desktop\clc12\clc12_Version_18_4.gdb -nln original.clc12_v_18_4 -overwrite -progress --config PG_USE_COPY YES
+
+ogr2ogr -f "PostgreSQL" PG:"host= port= dbname=oedb user= password=''" C:\temp\oedb\clc_corine_land_cover_2012_v_18_4\clc12_Version_18_4.gdb -nln orig_geo.clc_corine_land_cover_2012_v_18_4 -overwrite -progress --config PG_USE_COPY YES
