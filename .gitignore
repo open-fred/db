@@ -97,3 +97,7 @@ ENV/
 .Trashes
 ehthumbs.db
 Thumbs.db
+
+# misc
+*.swp
+*.swo
