@@ -26,7 +26,7 @@ COMMENT ON TABLE  environmental.ecjrc_glc2000 IS '{
 		{"name": "file", "description": " ", "url": "http://forobs.jrc.ec.europa.eu/products/glc2000/products/glc2000_v1_1_Tiff.zip", "license": "", "copyright": "© European Union 2015"} ],
 	"spatial": [
 		{"extent": "global",
-		"resolution": "0.089deg x 0.080deg"} ],
+		"resolution": "0.089 deg x 0.080 deg"} ],
 	"temporal": [
 		{"start": "",
 		"end": "",

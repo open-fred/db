@@ -27,8 +27,8 @@ COMMENT ON TABLE environmental.noaa_globe IS '{
 		{"name": "file", "description": "", "url": "https://www.ngdc.noaa.gov/mgg/topo/gltiles.html", "license": "", "copyright": ""} ],
 	"spatial": [
 		{"extent": "global",
-		"resolution": "0.0833deg x 0.0833deg"} ],
-T	"temporal": [
+		"resolution": "0.0833 deg x 0.0833 deg"} ],
+	"temporal": [
 		{"start": "",
 		"end": "",
 		"resolution": ""} ],
