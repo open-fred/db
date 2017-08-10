@@ -1,10 +1,4 @@
 /*
-
-------------------
-STILL IN PROGRESS
-------------------
-
-
 This script provides metadata for the 'environmental.ecjrc_glc2000' dataset
 A definition of metadata can be found in the openmod glossary http://wiki.openmod-initiative.org/wiki/Metadata
 A further description can be found on http://wiki.openmod-initiative.org/wiki/DatabaseRules
