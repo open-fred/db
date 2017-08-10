@@ -1,12 +1,12 @@
 /*
-This script provides metadata for the 'environmental.noaa_globe' dataset
+This script provides metadata for the 'initialboundRCM.merra2' dataset
 A definition of metadata can be found in the openmod glossary http://wiki.openmod-initiative.org/wiki/Metadata
 A further description can be found on http://wiki.openmod-initiative.org/wiki/DatabaseRules
 
 __copyright__ 	= "Reiner Lemoine Institut"
 __license__ 	= "GNU Affero General Public License Version 3 (AGPL-3.0)"
 __url__ 	= "https://github.com/openego/data_processing/blob/master/LICENSE"
-__author__ 	= "Ludee & KilianZimmerer"
+__author__ 	= "KilianZimmerer"
 __contains__	= "http://stackoverflow.com/questions/383692/what-is-json-and-why-would-i-use-it","https://specs.frictionlessdata.io/data-package/"
 
 Additional information:
@@ -18,16 +18,15 @@ Additional information:
 
 -- metadata
 COMMENT ON TABLE environmental.noaa_globe IS '{
-	"title": "Global Land One-km Base Elevation Project (GLOBE)",
-	"description": "A 30-arc-second (1-km) gridded, quality-controlled global Digital Elevation Model (DEM)",
+	"title": "Modern-Era Retrospective analysis for Research and Applications, Version 2",
+	"description": "An reanalysis data set from NASA",
 	"language": [ "eng" ],
-	"reference_date": "1999-01-01",
+	"reference_date": "updated regularly",
 	"sources": [
-		{"name": "National Geophysical Data Center, NOAA", "description": "", "url": "http://www.ngdc.noaa.gov/mgg/topo/globe.html", "license": "", "copyright": ""},
-		{"name": "file", "description": "", "url": "https://www.ngdc.noaa.gov/mgg/topo/gltiles.html", "license": "", "copyright": ""} ],
+		{"name": "National Aeronautics and Space Administration, Goddard Space Flight Center", "description": "", "url": "https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/data_access/", "license": "", "copyright": ""} ],
 	"spatial": [
 		{"extent": "global",
-		"resolution": "0.0833 deg x 0.0833 deg"} ],
+		"resolution": "0.625 deg x 0.5 deg"} ],
 	"temporal": [
 		{"start": "",
 		"end": "",
@@ -40,14 +39,9 @@ COMMENT ON TABLE environmental.noaa_globe IS '{
 		"instruction": "You are free: To Share, To Create, To Adapt; As long as you: Attribute, Share-Alike, Keep open!",
 		"copyright": "© Reiner Lemoine Institut"} ],
 	"contributors": [
-		{"name": "Ludee", "email": " ", "date": "2016-06-16", "comment": "Create metadata"},
-		{"name": "Ludee", "email": " ", "date": "2016-11-22", "comment": "Update metadata"},
-		{"name": "Ludee", "email": " ", "date": "2016-11-22", "comment": "Update header and license"},
-		{"name": "Ludee", "email": " ", "date": "2017-03-16", "comment": "Add license to source"},
-		{"name": "Ludee", "email": " ", "date": "2017-03-28", "comment": "Add copyright to source and license"},
-		{"name": "KilianZimmerer", "email": " ", "date": "2017-08-10", "comment": "Update metadata to version 1.3"} ],
+		{"name": "KilianZimmerer", "email": " ", "date": "2017-08-10", "comment": "Create metadata"} ],
 	"resources": [
-		{"name": "environmental.noaa_globe",		
+		{"name": "initialboundRCM.merra2",		
 		"format": "sql",
 		"fields": [
 			{"name": "id", "description": "Unique identifier", "unit": "" },
@@ -57,4 +51,4 @@ COMMENT ON TABLE environmental.noaa_globe IS '{
 	"metadata_version": "1.3"}';
 
 -- select description
-SELECT obj_description('environmental.noaa_globe' ::regclass) ::json;
+SELECT obj_description('initialboundRCM.merra2' ::regclass) ::json;
