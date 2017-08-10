@@ -17,7 +17,7 @@ Additional information:
 
 
 -- metadata
-COMMENT ON TABLE environmental.noaa_globe IS '{
+COMMENT ON TABLE initialboundRCM.merra2 IS '{
 	"title": "Modern-Era Retrospective analysis for Research and Applications, Version 2",
 	"description": "An reanalysis data set from NASA",
 	"language": [ "eng" ],
