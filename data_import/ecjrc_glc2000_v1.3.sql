@@ -23,20 +23,20 @@ Additional information:
 
 -- metadata
 COMMENT ON TABLE  environmental.ecjrc_glc2000 IS '{
-	"title": "Good example title",
-	"description": "example metadata for example data",
-	"language": [ "eng", "ger", "fre" ],
-	"reference_date": "2016-01-01",
+	"title": "Global Land Cover 2000 (GLC2000)",
+	"description": "The general objective is to provide for the year 2000 a harmonized land cover database over the whole globe. The year Two Thousand is considered as a reference year for environmental assessment in relation to various activities, in particular the United Nation\'s Ecosystem-related International Conventions.",
+	"language": [ "eng" ],
+	"reference_date": "1905-06-22",
 	"sources": [
-		{"name": "eGo dataprocessing", "description": " ", "url": "https://github.com/openego/data_processing", "license": "GNU Affero General Public License Version 3 (AGPL-3.0)", "copyright": "© Reiner Lemoine Institut"},
-		{"name": " ", "description": " ", "url": " ", "license": " ", "copyright": " "} ],
+		{"name": "European Comission, Joint Research Center", "description": " ", "url": "http://forobs.jrc.ec.europa.eu/products/glc2000/glc2000.php", "license": "", "copyright": "© European Union 2015"},
+		{"name": "file", "description": " ", "url": "http://forobs.jrc.ec.europa.eu/products/glc2000/products/glc2000_v1_1_Tiff.zip", "license": "", "copyright": "© European Union 2015"} ],
 	"spatial": [
-		{"extent": "europe",
-		"resolution": "100 m"} ],
+		{"extent": "global",
+		"resolution": "0.089deg x 0.080deg"} ],
 	"temporal": [
-		{"start": "2017-01-01",
-		"end": "2017-12-31",
-		"resolution": "hour"} ],
+		{"start": "",
+		"end": "",
+		"resolution": ""} ],
 	"license": [
 		{"id": "ODbL-1.0",
 		"name": "Open Data Commons Open Database License 1.0",
@@ -50,9 +50,9 @@ COMMENT ON TABLE  environmental.ecjrc_glc2000 IS '{
 		{"name": "Ludee", "email": " ", "date": "2016-11-22", "comment": "Update header and license"},
 		{"name": "Ludee", "email": " ", "date": "2017-03-16", "comment": "Add license to source"},
 		{"name": "Ludee", "email": " ", "date": "2017-03-28", "comment": "Add copyright to source and license"},
-		{"name": "Ludee", "email": " ", "date": "2017-05-30", "comment": "Update metadata to version 1.3"} ],
+		{"name": "KilianZimmerer", "email": " ", "date": "2017-08-10", "comment": "Update metadata to version 1.3"} ],
 	"resources": [
-		{"name": "model_draft.test_table",		
+		{"name": "environmental.ecjrc_glc2000",		
 		"format": "sql",
 		"fields": [
 			{"name": "id", "description": "Unique identifier", "unit": "" },
@@ -62,4 +62,31 @@ COMMENT ON TABLE  environmental.ecjrc_glc2000 IS '{
 	"metadata_version": "1.3"}';
 
 -- select description
-SELECT obj_description('model_draft.test_table' ::regclass) ::json;
+SELECT obj_description('environmental.ecjrc_glc2000' ::regclass) ::json;
+
+-- index (rast)
+CREATE INDEX ecjrc_glc2000_rast_idx
+	ON environmental.ecjrc_glc2000 USING GIST (ST_ConvexHull(rast));
+
+-- public.raster_columns
+SELECT AddRasterConstraints('environmental'::name, 'ecjrc_glc2000'::name, 'rast'::name, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE);
+
+-- grant
+ALTER TABLE environmental.ecjrc_glc2000
+	OWNER TO oeuser;
+
+-- MView (filter and projection)
+DROP MATERIALIZED VIEW IF EXISTS  	environmental.ecjrc_glc2000_germany_mview CASCADE;
+CREATE MATERIALIZED VIEW         	environmental.ecjrc_glc2000_germany_mview AS
+	SELECT	rid, ST_CLIP(ST_TRANSFORM(ng.rast,3035),vg.geom) AS rast
+	FROM	environmental.ecjrc_glc2000 AS ng,
+		political_boundary.bkg_vg250_1_sta_bbox_mview AS vg
+	WHERE	vg.geom && ST_TRANSFORM(ST_ConvexHull(ng.rast),3035);
+
+-- index (rast)
+CREATE INDEX noaa_globe_germany_mview_rast_idx
+	ON environmental.ecjrc_glc2000_germany_mview USING GIST (ST_ConvexHull(rast));
+
+-- grant
+ALTER TABLE environmental.ecjrc_glc2000_germany_mview
+	OWNER TO oeuser;
