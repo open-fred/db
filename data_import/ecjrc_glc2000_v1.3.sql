@@ -16,14 +16,14 @@ Additional information:
 */
 
 -- metadata
-COMMENT ON TABLE  environmental.ecjrc_glc2000 IS '{
+COMMENT ON TABLE environmental.ecjrc_glc2000 IS '{
 	"title": "Global Land Cover 2000 (GLC2000)",
 	"description": "The general objective is to provide for the year 2000 a harmonized land cover database over the whole globe. The year Two Thousand is considered as a reference year for environmental assessment in relation to various activities, in particular the United Nation\'s Ecosystem-related International Conventions.",
 	"language": [ "eng" ],
 	"reference_date": "1905-06-22",
 	"sources": [
-		{"name": "European Comission, Joint Research Center", "description": " ", "url": "http://forobs.jrc.ec.europa.eu/products/glc2000/glc2000.php", "license": "", "copyright": "© European Union 2015"},
-		{"name": "file", "description": " ", "url": "http://forobs.jrc.ec.europa.eu/products/glc2000/products/glc2000_v1_1_Tiff.zip", "license": "", "copyright": "© European Union 2015"} ],
+		{"name": "European Comission, Joint Research Center", "description": "", "url": "http://forobs.jrc.ec.europa.eu/products/glc2000/glc2000.php", "license": "", "copyright": "© European Union 2015"},
+		{"name": "file", "description": "", "url": "http://forobs.jrc.ec.europa.eu/products/glc2000/products/glc2000_v1_1_Tiff.zip", "license": "", "copyright": "© European Union 2015"} ],
 	"spatial": [
 		{"extent": "global",
 		"resolution": "0.089 deg x 0.080 deg"} ],
