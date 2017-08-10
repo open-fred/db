@@ -100,7 +100,7 @@ def ts_dataframe(station,type):
             name='bfg_hydaba_runoff', 
             if_exists='append',
             index=False)
-        logger.info('...dataframe sucessfully imported in database table...')
+        #logger.info('...dataframe sucessfully imported in database table...')
     
     # close connection
     conn.close()
@@ -123,7 +123,7 @@ def loop_dataframe():
             for type in types:
                 ts_dataframe(station,type)
     
-    ts_dataframe('Cochem','Q')
+    #ts_dataframe('Cochem','Q')
 
 
 if __name__ == '__main__':
