@@ -61,3 +61,10 @@ COMMENT ON TABLE hydrolib.bfg_hydaba_runoff IS '{
 
 -- select description
 SELECT obj_description('hydrolib.bfg_hydaba_runoff' ::regclass) ::json;
+
+
+-- statistic
+SELECT  station,type,count(*)
+FROM    hydrolib.bfg_hydaba_runoff
+GROUP BY    station,type
+ORDER BY    station,type;

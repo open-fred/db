@@ -45,8 +45,8 @@ def ts_dataframe(station,type):
     logger.info('...read file for %s as dataframe...' % (station))
 
     # file
-    #path = (r'F:\\DOCUMENTA\\OPERARE\\RLI\\oedb\\environment\\bfg_hydaba_mosel\\')
-    file = '%s-W+Q.xlsx' % (station)
+    #path = (r'L:\\github\\openfred\\db\\data_import\\hydrolib\\bfg_hydaba_runoff')
+    file = 'data\\%s-W+Q.xlsx' % (station)
     xls = pd.ExcelFile(file)
     sheet = '%s' % (type)
     logger.info('...read sheet: {}'.format(sheet))
