@@ -21,28 +21,29 @@ COMMENT ON TABLE initialboundRCM.merra2 IS '{
 	"title": "Modern-Era Retrospective analysis for Research and Applications, Version 2",
 	"description": "An reanalysis data set from NASA",
 	"language": [ "eng" ],
-	"reference_date": "updated regularly",
+	"spatial":
+		{"location": "",
+        "extent": "global",
+		"resolution": "0.625 deg x 0.5 deg"},
+	"temporal":
+		{"reference_date": "updated regularly",
+        "start": "",
+		"end": "",
+		"resolution": ""},
 	"sources": [
 		{"name": "National Aeronautics and Space Administration, Goddard Space Flight Center", "description": "", "url": "https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/data_access/", "license": "", "copyright": ""} ],
-	"spatial": [
-		{"extent": "global",
-		"resolution": "0.625 deg x 0.5 deg"} ],
-	"temporal": [
-		{"start": "",
-		"end": "",
-		"resolution": ""} ],
-	"license": [
+	"license":
 		{"id": "ODbL-1.0",
 		"name": "Open Data Commons Open Database License 1.0",
 		"version": "1.0",
 		"url": "https://opendatacommons.org/licenses/odbl/1.0/",
 		"instruction": "You are free: To Share, To Create, To Adapt; As long as you: Attribute, Share-Alike, Keep open!",
-		"copyright": "© Reiner Lemoine Institut"} ],
+		"copyright": "© Reiner Lemoine Institut"},
 	"contributors": [
 		{"name": "KilianZimmerer", "email": " ", "date": "2017-08-10", "comment": "Create metadata"} ],
 	"resources": [
 		{"name": "initialboundRCM.merra2",		
-		"format": "sql",
+		"format": "PostgreSQL",
 		"fields": [
 			{"name": "id", "description": "Unique identifier", "unit": "" },
 			{"name": "year", "description": "Reference year", "unit": "" },

@@ -21,28 +21,29 @@ COMMENT ON TABLE environmental.fao_hwsd IS '{
 	"title": "Harmonised World Soil Database",
 	"description": "The Harmonized World Soil Database is a 30 arc-second raster database with over 15 000 different soil mapping units that combines existing regional and national updates of soil information worldwide (SOTER, ESD, Soil Map of China, WISE) with the information contained within the 1:5 000 000 scale FAO-UNESCO Soil Map of the World (FAO, 1971-1981).",
 	"language": [ "eng" ],
-	"reference_date": "",
+	"spatial":
+		{"location": "",
+        "extent": "global",
+		"resolution": "0.0833 deg x 0.0833 deg"},
+	"temporal":
+		{"reference_date": "",
+        "start": "",
+		"end": "",
+		"resolution": ""},
 	"sources": [
 		{"name": "Food and Agriculture Organisation of the United Nations (FAOUN)", "description": "", "url": "http://www.fao.org/soils-portal/soil-survey/soil-maps-and-databases/harmonized-world-soil-database-v12/en/", "license": "", "copyright": ""} ],
-	"spatial": [
-		{"extent": "global",
-		"resolution": "0.0833 deg x 0.0833 deg"} ],
-	"temporal": [
-		{"start": "",
-		"end": "",
-		"resolution": ""} ],
-	"license": [
+	"license":
 		{"id": "ODbL-1.0",
 		"name": "Open Data Commons Open Database License 1.0",
 		"version": "1.0",
 		"url": "https://opendatacommons.org/licenses/odbl/1.0/",
 		"instruction": "You are free: To Share, To Create, To Adapt; As long as you: Attribute, Share-Alike, Keep open!",
-		"copyright": "© Reiner Lemoine Institut"} ],
+		"copyright": "© Reiner Lemoine Institut"},
 	"contributors": [
 		{"name": "KilianZimmerer", "email": " ", "date": "2017-08-10", "comment": "Create metadata"} ],
 	"resources": [
 		{"name": "environmental.fao_hwsd",		
-		"format": "sql",
+		"format": "PostgreSQL",
 		"fields": [
 			{"name": "id", "description": "Unique identifier", "unit": "" },
 			{"name": "year", "description": "Reference year", "unit": "" },

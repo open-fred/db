@@ -21,34 +21,31 @@ COMMENT ON TABLE environmental.noaa_globe IS '{
 	"title": "Global Land One-km Base Elevation Project (GLOBE)",
 	"description": "A 30-arc-second (1-km) gridded, quality-controlled global Digital Elevation Model (DEM)",
 	"language": [ "eng" ],
-	"reference_date": "1999-01-01",
+	"spatial":
+		{"location": "",
+        "extent": "global",
+		"resolution": "0.0833 deg x 0.0833 deg"},
+	"temporal":
+		{"reference_date": "1999-01-01",,
+        "start": "",
+		"end": "",
+		"resolution": ""},
 	"sources": [
 		{"name": "National Geophysical Data Center, NOAA", "description": "", "url": "http://www.ngdc.noaa.gov/mgg/topo/globe.html", "license": "", "copyright": ""},
 		{"name": "file", "description": "", "url": "https://www.ngdc.noaa.gov/mgg/topo/gltiles.html", "license": "", "copyright": ""} ],
-	"spatial": [
-		{"extent": "global",
-		"resolution": "0.0833 deg x 0.0833 deg"} ],
-	"temporal": [
-		{"start": "",
-		"end": "",
-		"resolution": ""} ],
-	"license": [
+	"license":
 		{"id": "ODbL-1.0",
 		"name": "Open Data Commons Open Database License 1.0",
 		"version": "1.0",
 		"url": "https://opendatacommons.org/licenses/odbl/1.0/",
 		"instruction": "You are free: To Share, To Create, To Adapt; As long as you: Attribute, Share-Alike, Keep open!",
-		"copyright": "© Reiner Lemoine Institut"} ],
+		"copyright": "© Reiner Lemoine Institut"},
 	"contributors": [
-		{"name": "Ludee", "email": " ", "date": "2016-06-16", "comment": "Create metadata"},
-		{"name": "Ludee", "email": " ", "date": "2016-11-22", "comment": "Update metadata"},
-		{"name": "Ludee", "email": " ", "date": "2016-11-22", "comment": "Update header and license"},
-		{"name": "Ludee", "email": " ", "date": "2017-03-16", "comment": "Add license to source"},
-		{"name": "Ludee", "email": " ", "date": "2017-03-28", "comment": "Add copyright to source and license"},
-		{"name": "KilianZimmerer", "email": " ", "date": "2017-08-10", "comment": "Update metadata to version 1.3"} ],
+		{"name": "Ludee", "email": "", "date": "2016-10-24", "comment": "Create table and import data"},
+		{"name": "KilianZimmerer", "email": "", "date": "2017-08-10", "comment": "Update metadata to version 1.3"} ],
 	"resources": [
 		{"name": "environmental.noaa_globe",		
-		"format": "sql",
+		"format": "PostgreSQL",
 		"fields": [
 			{"name": "id", "description": "Unique identifier", "unit": "" },
 			{"name": "year", "description": "Reference year", "unit": "" },
