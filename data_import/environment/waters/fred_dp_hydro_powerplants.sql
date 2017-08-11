@@ -71,7 +71,8 @@ CREATE MATERIALIZED VIEW            supply.fred_dp_conv_powerplant_hydro_on_gaug
             b.geom ::geometry(Point,3035)
             ) ::geometry(LineString,3035) AS geom_line,
         ST_Distance(ST_TRANSFORM(a.geom,3035),b.geom)
-    FROM    supply.fred_dp_conv_powerplant_hydro_mview AS a,    -- base
+    FROM    supply.fred_dp_conv_powerplant_hydro_on_river_mview AS a,    -- base
             hydrolib.fred_gaugeheight_station AS b              -- target
     WHERE   ST_DWithin(ST_TRANSFORM(a.geom,3035),b.geom, 20000)  -- In a 1 km radius
+            AND LOWER(a.nam) LIKE LOWER(b.water)
     ORDER BY a.gid, ST_Distance(ST_TRANSFORM(a.geom,3035),b.geom);
