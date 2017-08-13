@@ -1,5 +1,5 @@
 /*
-This script provides metadata for the 'initialboundRCM.merra2' dataset
+This script provides metadata for the 'environmental.fao_hwsd' dataset
 A definition of metadata can be found in the openmod glossary http://wiki.openmod-initiative.org/wiki/Metadata
 A further description can be found on http://wiki.openmod-initiative.org/wiki/DatabaseRules
 
@@ -17,32 +17,33 @@ Additional information:
 
 
 -- metadata
-COMMENT ON TABLE initialboundRCM.merra2 IS '{
-	"title": "Modern-Era Retrospective analysis for Research and Applications, Version 2",
-	"description": "An reanalysis data set from NASA",
+COMMENT ON TABLE environmental.fao_hwsd IS '{
+	"title": "Harmonised World Soil Database",
+	"description": "The Harmonized World Soil Database is a 30 arc-second raster database with over 15 000 different soil mapping units that combines existing regional and national updates of soil information worldwide (SOTER, ESD, Soil Map of China, WISE) with the information contained within the 1:5 000 000 scale FAO-UNESCO Soil Map of the World (FAO, 1971-1981).",
 	"language": [ "eng" ],
 	"spatial":
-		{"location": "",
+		{"location": "none",
         "extent": "global",
-		"resolution": "0.625 deg x 0.5 deg"},
+		"resolution": "0.0833 deg x 0.0833 deg"},
 	"temporal":
-		{"reference_date": "updated regularly",
+		{"reference_date": "",
         "start": "",
 		"end": "",
 		"resolution": ""},
 	"sources": [
-		{"name": "National Aeronautics and Space Administration, Goddard Space Flight Center", "description": "", "url": "https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/data_access/", "license": "", "copyright": ""} ],
+		{"name": "Food and Agriculture Organisation of the United Nations (FAOUN)", "description": "", "url": "http://www.fao.org/soils-portal/soil-survey/soil-maps-and-databases/harmonized-world-soil-database-v12/en/", "license": "", "copyright": "© FAO, IIASA, ISRIC, ISSCAS, JRC 2008-2009"},
+        {"name": "file", "description": "", "url": "http://www.fao.org/fileadmin/user_upload/soils/HWSD%20Viewer/HWSD.mdb", "license": "", "copyright": "© FAO, IIASA, ISRIC, ISSCAS, JRC 2008-2009"} ],
 	"license":
-		{"id": "ODbL-1.0",
-		"name": "Open Data Commons Open Database License 1.0",
-		"version": "1.0",
-		"url": "https://opendatacommons.org/licenses/odbl/1.0/",
-		"instruction": "You are free: To Share, To Create, To Adapt; As long as you: Attribute, Share-Alike, Keep open!",
-		"copyright": "© Reiner Lemoine Institut"},
+		{"id": "none",
+		"name": "none",
+		"version": "none",
+		"url": "none",
+		"instruction": "none",
+		"copyright": "none"},
 	"contributors": [
 		{"name": "KilianZimmerer", "email": " ", "date": "2017-08-10", "comment": "Create metadata"} ],
 	"resources": [
-		{"name": "initialboundRCM.merra2",		
+		{"name": "environmental.fao_hwsd",		
 		"format": "PostgreSQL",
 		"fields": [
 			{"name": "id", "description": "Unique identifier", "unit": "" },
@@ -52,4 +53,4 @@ COMMENT ON TABLE initialboundRCM.merra2 IS '{
 	"metadata_version": "1.3"}';
 
 -- select description
-SELECT obj_description('initialboundRCM.merra2' ::regclass) ::json;
+SELECT obj_description('environmental.fao_hwsd' ::regclass) ::json;

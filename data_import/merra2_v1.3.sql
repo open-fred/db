@@ -1,5 +1,5 @@
 /*
-This script provides metadata for the 'surfacealbedo.modis' dataset
+This script provides metadata for the 'initialboundRCM.merra2' dataset
 A definition of metadata can be found in the openmod glossary http://wiki.openmod-initiative.org/wiki/Metadata
 A further description can be found on http://wiki.openmod-initiative.org/wiki/DatabaseRules
 
@@ -15,33 +15,35 @@ Additional information:
 - If not applicable use "none"
 */
 
+
 -- metadata
-COMMENT ON TABLE surfacealbedo.modis IS '{
-	"title": "Filled Land Surface Albedo Product",
-	"description": "",
-	"language": [ "" ],
-	"reference_date": "",
-	"sources": [
-		{"name": "", "description": "", "url": "", "license": "", "copyright": ""} ],
-	"spatial": [
-		{"extent": "",
-		"resolution": ""} ],
-	"temporal": [
-		{"start": "",
+COMMENT ON TABLE initialboundRCM.merra2 IS '{
+	"title": "Modern-Era Retrospective analysis for Research and Applications, Version 2",
+	"description": "An reanalysis data set from NASA",
+	"language": [ "eng" ],
+	"spatial":
+		{"location": "",
+        "extent": "global",
+		"resolution": "0.625 deg x 0.5 deg"},
+	"temporal":
+		{"reference_date": "updated regularly",
+        "start": "",
 		"end": "",
-		"resolution": ""} ],
-	"license": [
-		{"id": "ODbL-1.0",
-		"name": "Open Data Commons Open Database License 1.0",
-		"version": "1.0",
-		"url": "https://opendatacommons.org/licenses/odbl/1.0/",
-		"instruction": "You are free: To Share, To Create, To Adapt; As long as you: Attribute, Share-Alike, Keep open!",
-		"copyright": "© Reiner Lemoine Institut"} ],
+		"resolution": ""},
+	"sources": [
+		{"name": "National Aeronautics and Space Administration, Goddard Space Flight Center", "description": "", "url": "https://gmao.gsfc.nasa.gov/reanalysis/MERRA-2/data_access/", "license": "", "copyright": ""} ],
+	"license":
+		{"id": "none",
+		"name": "none",
+		"version": "none",
+		"url": "none",
+		"instruction": "none",
+		"copyright": "none"},
 	"contributors": [
 		{"name": "KilianZimmerer", "email": " ", "date": "2017-08-10", "comment": "Create metadata"} ],
 	"resources": [
-		{"name": "surfacealbedo.modis",		
-		"format": "sql",
+		{"name": "initialboundRCM.merra2",		
+		"format": "PostgreSQL",
 		"fields": [
 			{"name": "id", "description": "Unique identifier", "unit": "" },
 			{"name": "year", "description": "Reference year", "unit": "" },
@@ -50,4 +52,4 @@ COMMENT ON TABLE surfacealbedo.modis IS '{
 	"metadata_version": "1.3"}';
 
 -- select description
-SELECT obj_description('surfacealbedo.modis' ::regclass) ::json;
+SELECT obj_description('initialboundRCM.merra2' ::regclass) ::json;
