@@ -22,7 +22,7 @@ COMMENT ON TABLE environmental.noaa_globe IS '{
 	"description": "A 30-arc-second (1-km) gridded, quality-controlled global Digital Elevation Model (DEM)",
 	"language": [ "eng" ],
 	"spatial":
-		{"location": "world",
+		{"location": "none",
         "extent": "global",
 		"resolution": "long = 0.0833 deg, lat = 0.0833 deg"},
 	"temporal":

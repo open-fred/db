@@ -22,7 +22,7 @@ COMMENT ON TABLE environmental.fao_hwsd IS '{
 	"description": "The Harmonized World Soil Database is a 30 arc-second raster database with over 15 000 different soil mapping units that combines existing regional and national updates of soil information worldwide (SOTER, ESD, Soil Map of China, WISE) with the information contained within the 1:5 000 000 scale FAO-UNESCO Soil Map of the World (FAO, 1971-1981).",
 	"language": [ "eng" ],
 	"spatial":
-		{"location": "world",
+		{"location": "none",
         "extent": "global",
 		"resolution": "lat = 0.0833 deg, long = 0.0833 deg"},
 	"temporal":

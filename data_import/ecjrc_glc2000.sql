@@ -21,7 +21,7 @@ COMMENT ON TABLE environmental.ecjrc_glc2000 IS '{
 	"description": "The general objective is to provide for the year 2000 a harmonized land cover database over the whole globe. The year Two Thousand is considered as a reference year for environmental assessment in relation to various activities, in particular the United Nation\'s Ecosystem-related International Conventions.",
 	"language": [ "eng" ],
 	"spatial": 
-		{"location": "world",
+		{"location": "none",
         "extent": "global",
 		"resolution": "lat = 0.089 deg, long = 0.089 deg"},
 	"temporal":

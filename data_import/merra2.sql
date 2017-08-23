@@ -22,7 +22,7 @@ COMMENT ON TABLE initialboundRCM.merra2 IS '{
 	"description": "An reanalysis data set from NASA",
 	"language": [ "eng" ],
 	"spatial":
-		{"location": "world",
+		{"location": "none",
         "extent": "global",
 		"resolution": "long = 0.625 deg, lat = 0.5 deg"},
 	"temporal":

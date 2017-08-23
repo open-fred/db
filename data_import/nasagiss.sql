@@ -21,7 +21,7 @@ COMMENT ON TABLE aerosols.nasagis IS '{
 	"description": "The Filled Land Surface Albedo Product, which is generated from MOD43B3 (the official Terra/MODIS-derived Land Surface Albedo Product, website), is a global data set of spatially complete albedo maps computed for both "white-sky" and "black-sky" at 10 wavelengths (0.47µm, 0.55µm, 0.67µm, 0.86µm, 1.24µm, 2.1µm, 0.3-0.7µm, 0.3-5.0µm, and 0.7-5.0µm) for 23 sixteen-day periods per year (001, 017, ... 353).",
 	"language": [ "eng" ],
 	"spatial": 
-		{"location": "world",
+		{"location": "none",
         "extent": "global",
 		"resolution": "lat = 1 deg, long = 1 deg"},
 	"temporal":
