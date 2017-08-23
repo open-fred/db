@@ -1,51 +1,57 @@
-﻿-- metadata
+/*
+This script provides metadata for the 'environmental.noaa_globe' dataset
+A definition of metadata can be found in the openmod glossary http://wiki.openmod-initiative.org/wiki/Metadata
+A further description can be found on http://wiki.openmod-initiative.org/wiki/DatabaseRules
+
+__copyright__ 	= "Reiner Lemoine Institut"
+__license__ 	= "GNU Affero General Public License Version 3 (AGPL-3.0)"
+__url__ 	= "https://github.com/openego/data_processing/blob/master/LICENSE"
+__author__ 	= "Ludee & KilianZimmerer"
+__contains__	= "http://stackoverflow.com/questions/383692/what-is-json-and-why-would-i-use-it","https://specs.frictionlessdata.io/data-package/"
+
+Additional information:
+- Dates must follow the ISO8601 (JJJJ-MM-TT)
+- Use a space between Numbers and units (100 m)
+- If not applicable use "none"
+*/
+
+
+-- metadata
 COMMENT ON TABLE environmental.noaa_globe IS '{
-	"Name": "Global Land One-km Base Elevation Project (GLOBE)",
-	"Source": [{
-		"Name": "National Geophysical Data Center, NOAA",
-		"URL":  "http://www.ngdc.noaa.gov/mgg/topo/globe.html" }],
-	"Reference date": "01.01.1999",
-	"Date of collection": "24.10.2016",
-	"Original file": "http://www.ngdc.noaa.gov/mgg/topo/DATATILES/elev/all10g.zip imported with https://github.com/open-fred/db/blob/master/data_import/setup_noaa_globe_raster.txt",
-	"Spatial resolution": ["Global"],
-	"Description": ["A 30-arc-second (1-km) gridded, quality-controlled global Digital Elevation Model (DEM)"],
-	"Column": [
-		{"Name": "rid", "Description": "Unique identifier", "Unit": " " },
-		{"Name": "rast", "Description": "Raster tiles", "Unit": "" } ],
-	"Changes":[
-		{"Name": "Ludwig Hülk", "Mail": "ludwig.huelk@rl-institut.de",
-		"Date":  "24.10.2016", "Comment": "Create table and import data" } ],
-	"ToDo": ["Please complete"],
-	"Licence": ["No License Provided"],
-	"Instructions for proper use": ["GLOBE Task Team and others (Hastings, David A., Paula K. Dunbar, Gerald M. Elphingstone, Mark Bootz, Hiroshi Murakami, Hiroshi Maruyama, Hiroshi Masaharu, Peter Holland, John Payne, Nevin A. Bryant, Thomas L. Logan, J.-P. Muller, Gunter Schreier, and John S. MacDonald), eds., 1999. The Global Land One-kilometer Base Elevation (GLOBE) Digital Elevation Model, Version 1.0. National Oceanic and Atmospheric Administration, National Geophysical Data Center, 325 Broadway, Boulder, Colorado 80305-3328, U.S.A. Digital data base on the World Wide Web (URL: http://www.ngdc.noaa.gov/mgg/topo/globe.html) and CD-ROMs. Cite as: National Geophysical Data Center, 1999. Global Land One-kilometer Base Elevation (GLOBE) v.1. Hastings, D. and P.K. Dunbar. National Geophysical Data Center, NOAA. doi:10.7289/V52R3PMS [access date]."]
-	}';
+	"title": "Global Land One-km Base Elevation Project (GLOBE)",
+	"description": "A 30-arc-second (1-km) gridded, quality-controlled global Digital Elevation Model (DEM)",
+	"language": [ "eng" ],
+	"spatial":
+		{"location": "world",
+        "extent": "global",
+		"resolution": "long = 0.0833 deg, lat = 0.0833 deg"},
+	"temporal":
+		{"reference_date": "1999-01-01",,
+        "start": "none",
+		"end": "none",
+		"resolution": "none"},
+	"sources": [
+		{"name": "National Geophysical Data Center, NOAA", "description": "", "url": "http://www.ngdc.noaa.gov/mgg/topo/globe.html", "license": "https://www.ngdc.noaa.gov/mgg/topo/report/s3/s3B.html", "copyright": "partly © AUSLIG"},
+		{"name": "file", "description": "zip- and gz- files", "url": "https://www.ngdc.noaa.gov/mgg/topo/gltiles.html", "license": "https://www.ngdc.noaa.gov/mgg/topo/report/s3/s3B.html", "copyright": "partly © AUSLIG"} ],
+	"license":
+		{"id": "none",
+		"name": "none",
+		"version": "none",
+		"url": "none",
+		"instruction": "none",
+		"copyright": "none"},
+	"contributors": [
+		{"name": "Ludee", "email": "", "date": "2016-10-24", "comment": "Create table and import data"},
+		{"name": "KilianZimmerer", "email": "", "date": "2017-08-23", "comment": "Update metadata to version 1.3"} ],
+	"resources": [
+		{"name": "environmental.noaa_globe",		
+		"format": "PostgreSQL",
+		"fields": [
+			{"name": "id", "description": "Unique identifier", "unit": "" },
+			{"name": "year", "description": "Reference year", "unit": "" },
+			{"name": "value", "description": "Example value", "unit": "MW" },
+			{"name": "geom", "description": "Geometry", "unit": "" }] }],
+	"metadata_version": "1.3"}';
 
+-- select description
 SELECT obj_description('environmental.noaa_globe' ::regclass) ::json;
-
--- index (rast)
-CREATE INDEX noaa_globe_rast_idx
-	ON environmental.noaa_globe USING GIST (ST_ConvexHull(rast));
-
--- public.raster_columns
-SELECT AddRasterConstraints('environmental'::name, 'noaa_globe'::name, 'rast'::name, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE, TRUE);
-
--- grant
-ALTER TABLE environmental.noaa_globe
-	OWNER TO oeuser;
-
-
--- MView (filter and projection)
-DROP MATERIALIZED VIEW IF EXISTS  	environmental.noaa_globe_germany_mview CASCADE;
-CREATE MATERIALIZED VIEW         	environmental.noaa_globe_germany_mview AS
-	SELECT	rid, ST_CLIP(ST_TRANSFORM(ng.rast,3035),vg.geom) AS rast
-	FROM	environmental.noaa_globe AS ng,
-		political_boundary.bkg_vg250_1_sta_bbox_mview AS vg
-	WHERE	vg.geom && ST_TRANSFORM(ST_ConvexHull(ng.rast),3035);
-
--- index (rast)
-CREATE INDEX noaa_globe_germany_mview_rast_idx
-	ON environmental.noaa_globe_germany_mview USING GIST (ST_ConvexHull(rast));
-
--- grant
-ALTER TABLE environmental.noaa_globe_germany_mview
-	OWNER TO oeuser;
