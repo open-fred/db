@@ -61,19 +61,3 @@ COMMENT ON TABLE hydrolib.bfg_hydaba_runoff IS '{
 
 -- select description
 SELECT obj_description('hydrolib.bfg_hydaba_runoff' ::regclass) ::json;
-
-
--- statistic
-SELECT  station,type,count(*)
-FROM    hydrolib.bfg_hydaba_runoff
-GROUP BY    station,type
-ORDER BY    station,type;
-
--- connect powerplants with measurement data
-SELECT  a.gid,a.name,a.capacity,
-        b.water,b.station,
-        c.type,c.year,c.time_series
-FROM    supply.fred_dp_conv_powerplant_hydro_mview AS a
-        LEFT JOIN    supply.fred_dp_conv_powerplant_hydro_on_gaugeheight_mview AS b ON (a.gid = b.gid)
-        LEFT JOIN    hydrolib.bfg_hydaba_runoff AS c ON (LOWER(b.station) = LOWER(c.station))
-WHERE   a.gid = 687 AND c.year = 2015;

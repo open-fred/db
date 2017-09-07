@@ -45,8 +45,8 @@ def ts_dataframe(station,type):
     logger.info('...read file for %s as dataframe...' % (station))
 
     # file
-    #path = (r'L:\\github\\openfred\\db\\data_import\\hydrolib\\bfg_hydaba_runoff')
-    file = 'data\\%s-W+Q.xlsx' % (station)
+    #path = (r'F:\\DOCUMENTA\\OPERARE\\RLI\\oedb\\environment\\bfg_hydaba_mosel\\')
+    file = '%s-W+Q.xlsx' % (station)
     xls = pd.ExcelFile(file)
     sheet = '%s' % (type)
     logger.info('...read sheet: {}'.format(sheet))
@@ -94,13 +94,13 @@ def ts_dataframe(station,type):
         print(dbdf)
 
         # copy dataframe to database
-        conn = oedb_session(section='oedb-direct')
+        conn = oedb_session(section='oedb')
         dbdf.to_sql(con=conn, 
             schema='hydrolib', 
             name='bfg_hydaba_runoff', 
             if_exists='append',
             index=False)
-        #logger.info('...dataframe sucessfully imported in database table...')
+        logger.info('...dataframe sucessfully imported in database table...')
     
     # close connection
     conn.close()
@@ -115,7 +115,8 @@ def loop_dataframe():
     #ts_dataframe(station,type)
     
     # settings
-    stations = ['Cochem','Perl','Trier-UP']
+    #stations = ['Cochem','Perl','Trier-UP']
+    stations = ['Allendorf','Heldra']
     types = ['W','Q']
 
     if __name__ == '__main__':

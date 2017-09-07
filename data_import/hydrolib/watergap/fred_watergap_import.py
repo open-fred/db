@@ -46,9 +46,10 @@ def read_netcdf():
     logging.info('...read netcdf file as dataframe...')
 
     # file
-    file_path = 'watergap3_discharge_de_2006_2010.nc'
+    file_path = 'r//SRV02//RL-Institut//04_Projekte//163_Open_FRED//03-Projektinhalte//AP2 Wetterdaten//WaterGAP//'
+    file_name = 'watergap3_discharge_de_2006_2010.nc'
 
-    with xr.open_mfdataset(file_path) as ds_watergap:
+    with xr.open_mfdataset(file_path+file_name) as ds_watergap:
         df_watergap = ds_watergap.to_dataframe()
     del(ds_watergap)
 
@@ -152,7 +153,7 @@ def write_discharge_data_to_db(conn, years):
                     if_exists='append',
                     index=False)
             except:
-                logging.info('...No data for year {} and point {}{}...'.format(
+                logging.info('...No data for year {} and point {} {}...'.format(
                     str(year), str(df_lat_lon.loc[point, 'lon']),
                     str(df_lat_lon.loc[point, 'lat'])))
         logging.info('...year {} done...'.format(str(year)))
@@ -162,7 +163,7 @@ def write_discharge_data_to_db(conn, years):
 
 if __name__ == '__main__':
     #read_netcdf()
-    conn = oedb_session(section='open_edb')
+    conn = oedb_session()
     logging.info('...oedb connection active...')
     #write_lat_lon_to_db(conn)
     write_discharge_data_to_db(conn, np.arange(2006, 2007, 1))
