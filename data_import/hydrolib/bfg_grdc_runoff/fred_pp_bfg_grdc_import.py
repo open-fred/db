@@ -39,29 +39,29 @@ def oedb_session(section='oedb'):
     logger.info('...oedb connection active...')
 
 
-def ts_dataframe(station,type):
+def ts_dataframe(station_id,station):
     """read excel file and sheets and make dataframe"""
 
     logger.info('...read file for %s as dataframe...' % (station))
 
     # file
     #path = (r'F:\\DOCUMENTA\\OPERARE\\RLI\\oedb\\environment\\bfg_hydaba_mosel\\')
-    file = '%s-W+Q.xlsx' % (station)
-    xls = pd.ExcelFile(file)
-    sheet = '%s' % (type)
-    logger.info('...read sheet: {}'.format(sheet))
+    file = 'data\\%s_Q_Day.Cmd.txt' % (station_id)
     
     # meta = pd.read_excel(xls, sheet, index_col=None, header=1, skipfooter=8765, parse_cols='A:B')
     # logger.info('...read metadata...')
     # print(meta)
     
     # make dataframe
-    df = pd.read_excel(xls, sheet, header=3)
+    df = pd.read_csv(file, sep=";", header=35)
     df.index.names = ['id']
-    df.columns = ['time','value']
+    df.columns = ['time','hour','value']
+    del df['hour']
+    print(df.head())
     #print(df.head())
 
     # add year
+    df['time'] = pd.to_datetime(df['time'])
     df['year'] = df['time'].dt.year
     #print(df.head())
 
@@ -84,6 +84,7 @@ def ts_dataframe(station,type):
         #print(ts)
 
         # database dataframe
+        type = 'Q'
         columns=['station','type','year','time_series']
         data = {'station':station,'type':type,'year':year} 
         #logger.info('...reshape dataframe...')
@@ -94,41 +95,48 @@ def ts_dataframe(station,type):
         print(dbdf)
 
         # copy dataframe to database
-        conn = oedb_session(section='oedb')
         dbdf.to_sql(con=conn, 
             schema='hydrolib', 
-            name='bfg_hydaba_runoff', 
+            name='bfg_grdc_runoff', 
             if_exists='append',
             index=False)
         logger.info('...dataframe sucessfully imported in database table...')
+
+def loop_dataframe():
+    # """list for the loops"""
+    
+    # settings
+    stations = {6337310: 'EISENACH-PETERSBERG', 
+        6337320: 'DORNDORF 2',
+        6337330: 'MITTELSCHMALKALDEN',
+        6337340: 'ELLINGSHAUSEN',
+        6337350: 'RAPPELSDORF',
+        6337542: 'ARENSHAUSEN',
+        6337610: 'MEININGEN',
+        6340220: 'WASSERTHALEBEN',
+        6340225: 'ZOELLNITZ',
+        6340302: 'RUDOLSTADT',
+        6340310: 'SUNDHAUSEN',
+        6340315: 'NORDHAUSEN', 
+        6340320: 'NIEDERTREBRA',
+        6340330: 'FREIENORLA',
+        6340335: 'KAULSDORF-EICHICHT',
+        6340340: 'MOESCHLITZ',
+        6340360: 'WEIDA',
+        6340366: 'GOESSNITZ'}
+
+    if __name__ == '__main__':
+        for station in stations:
+            ts_dataframe(station,stations[station])
+
+
+if __name__ == '__main__':
+    conn = oedb_session()
+    loop_dataframe()
     
     # close connection
     conn.close()
     logger.info('...oedb connection closed...')
-
-def loop_dataframe():
-    # """list for the loops"""
-
-    # tests
-    #station = 'Cochem'
-    #type = 'Q'
-    #ts_dataframe(station,type)
-    
-    # settings
-    #stations = ['Cochem','Perl','Trier-UP']
-    stations = ['Allendorf','Heldra']
-    types = ['W','Q']
-
-    if __name__ == '__main__':
-        for station in stations:
-            for type in types:
-                ts_dataframe(station,type)
-    
-    #ts_dataframe('Cochem','Q')
-
-
-if __name__ == '__main__':
-    loop_dataframe()
 
 # logging
 logger.info('...script successfully executed in {:.2f} seconds!'.format(

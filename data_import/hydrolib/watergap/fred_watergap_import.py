@@ -76,7 +76,9 @@ def read_netcdf():
     logging.info('...function "read_netcdf" done')
 
 
-def write_lat_lon_to_db(conn):
+def write_lat_lon_to_db(section):
+
+    conn = oedb_session(section=section)
 
     logging.info('start function "write_lat_lon_to_db"...')
 
@@ -107,8 +109,10 @@ def write_lat_lon_to_db(conn):
         dtype={'geom': Geometry('POINT', srid=4326)})
     logging.info('...dataframe sucessfully imported in database table...')
 
+    conn.close()
 
-def write_discharge_data_to_db(conn, years):
+
+def write_discharge_data_to_db(section, years):
 
     logging.info('start function "write_discharge_data_to_db"...')
 
@@ -117,11 +121,17 @@ def write_discharge_data_to_db(conn, years):
     logging.info('...total number of coordinates: {}...'.format(
         str(number_of_coords)))
 
+    conn = None
     for year in years:
         df_watergap = pickle.load(open(
             'df_watergap_{}.p'.format(str(year)), 'rb'))
         for point in range(number_of_coords):
-            if point % 50 == 0:
+            if point % 300 == 0:
+                if conn:
+                    conn.close()
+                    logging.info('...reconnect to database...')
+                conn = oedb_session(section=section)
+            if point % 100 == 0:
                 logging.info('...point {} of {} in year {}...'.format(
                         str(point), str(number_of_coords), str(year)))
             try:
@@ -133,7 +143,7 @@ def write_discharge_data_to_db(conn, years):
                 time_series = time_series.sort_values('time')
                 time_series = time_series.Dis.tolist()
 
-                if len(time_series) != 365:
+                if len(time_series) != 365 and len(time_series) != 366:
                     logging.info(
                         '...Data for year {} and point {}{} incomplete...'.format(
                             str(year), str(df_lat_lon.loc[point, 'lon']),
@@ -152,24 +162,19 @@ def write_discharge_data_to_db(conn, years):
                     if_exists='append',
                     index=False)
             except:
-                logging.info('...No data for year {} and point {}{}...'.format(
+                logging.info('...No data for year {} and point {} {}...'.format(
                     str(year), str(df_lat_lon.loc[point, 'lon']),
                     str(df_lat_lon.loc[point, 'lat'])))
         logging.info('...year {} done...'.format(str(year)))
-
+        if conn:
+            conn.close()
     return
 
 
 if __name__ == '__main__':
-    #read_netcdf()
-    conn = oedb_session(section='open_edb')
-    logging.info('...oedb connection active...')
-    #write_lat_lon_to_db(conn)
-    write_discharge_data_to_db(conn, np.arange(2006, 2007, 1))
-    # close connection
-    conn.close()
-    logging.info('...oedb connection closed...')
-
-# logging
-logging.info('...script successfully executed in {:.2f} seconds!'.format(
-    time.time() - start_time))
+    read_netcdf()
+    section = 'open_edb'
+    write_lat_lon_to_db(section)
+    write_discharge_data_to_db(section, np.arange(2010, 2011, 1))
+    logging.info('...script successfully executed in {:.2f} seconds!'.format(
+        time.time() - start_time))
