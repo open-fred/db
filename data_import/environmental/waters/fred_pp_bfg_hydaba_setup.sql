@@ -8,3 +8,5 @@ __author__      = "Ludee"
 */
 
 
+DROP TABLE IF EXISTS    model_draft.fred_gaugeheight_station;
+CREATE TABLE            public.fred_gaugeheight_station (
