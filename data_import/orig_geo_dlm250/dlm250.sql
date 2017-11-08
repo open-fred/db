@@ -572,7 +572,7 @@ COMMENT ON TABLE environment.dlm250_ver01_l IS '{
 SELECT obj_description('environment.dlm250_ver01_l' ::regclass) ::json;
 
 -- metadata
-COMMENT ON TABLE environment.dlm250_verO2_l IS '{
+COMMENT ON TABLE environment.dlm250_ver02_l IS '{
     "title": "Digitales Landschaftsmodell 1:250 000 - Wege, dargestellt durch linienhafte Objekte",
     "description": "Das Digitale Landschaftsmodell 1:250 000 (DLM250) beschreibt die topographischen Objekte der Landschaft im Vektorformat. Die Objekte werden einer bestimmten Objektart zugeordnet und durch ihre räumliche Lage, ihren geometrischen Typ und beschreibende Attribute definiert.",
     "language": [ "ger" ],
@@ -622,7 +622,7 @@ COMMENT ON TABLE environment.dlm250_verO2_l IS '{
 SELECT obj_description('environment.dlm250_ver02_l' ::regclass) ::json;
 
 -- metadata
-COMMENT ON TABLE environment.dlm250_verO3_f IS '{
+COMMENT ON TABLE environment.dlm250_ver03_f IS '{
     "title": "Digitales Landschaftsmodell 1:250 000 - Bahnverkehr, dargestellt durch flächenhafte Objekte",
     "description": "Das Digitale Landschaftsmodell 1:250 000 (DLM250) beschreibt die topographischen Objekte der Landschaft im Vektorformat. Die Objekte werden einer bestimmten Objektart zugeordnet und durch ihre räumliche Lage, ihren geometrischen Typ und beschreibende Attribute definiert.",
     "language": [ "ger" ],
@@ -669,7 +669,7 @@ COMMENT ON TABLE environment.dlm250_verO3_f IS '{
 SELECT obj_description('environment.dlm250_ver03_f' ::regclass) ::json;
 
 -- metadata
-COMMENT ON TABLE environment.dlm250_verO3_l IS '{
+COMMENT ON TABLE environment.dlm250_ver03_l IS '{
     "title": "Digitales Landschaftsmodell 1:250 000 - Bahnverkehr, dargestellt durch linienhafte Objekte",
     "description": "Das Digitale Landschaftsmodell 1:250 000 (DLM250) beschreibt die topographischen Objekte der Landschaft im Vektorformat. Die Objekte werden einer bestimmten Objektart zugeordnet und durch ihre räumliche Lage, ihren geometrischen Typ und beschreibende Attribute definiert.",
     "language": [ "ger" ],
@@ -724,7 +724,7 @@ COMMENT ON TABLE environment.dlm250_verO3_l IS '{
 SELECT obj_description('environment.dlm250_ver03_l' ::regclass) ::json;
 
 -- metadata
-COMMENT ON TABLE environment.dlm250_verO4_f IS '{
+COMMENT ON TABLE environment.dlm250_ver04_f IS '{
     "title": "Digitales Landschaftsmodell 1:250 000 - Flugverkehr, dargestellt durch flächenhafte Objekte",
     "description": "Das Digitale Landschaftsmodell 1:250 000 (DLM250) beschreibt die topographischen Objekte der Landschaft im Vektorformat. Die Objekte werden einer bestimmten Objektart zugeordnet und durch ihre räumliche Lage, ihren geometrischen Typ und beschreibende Attribute definiert.",
     "language": [ "ger" ],
@@ -777,7 +777,7 @@ COMMENT ON TABLE environment.dlm250_verO4_f IS '{
 SELECT obj_description('environment.dlm250_ver04_f' ::regclass) ::json;
 
 -- metadata
-COMMENT ON TABLE environment.dlm250_verO5_l IS '{
+COMMENT ON TABLE environment.dlm250_ver05_l IS '{
     "title": "Digitales Landschaftsmodell 1:250 000 - Schiffsverkehr, dargestellt durch linienhafte Objekte",
     "description": "Das Digitale Landschaftsmodell 1:250 000 (DLM250) beschreibt die topographischen Objekte der Landschaft im Vektorformat. Die Objekte werden einer bestimmten Objektart zugeordnet und durch ihre räumliche Lage, ihren geometrischen Typ und beschreibende Attribute definiert.",
     "language": [ "ger" ],
@@ -826,7 +826,7 @@ COMMENT ON TABLE environment.dlm250_verO5_l IS '{
 SELECT obj_description('environment.dlm250_ver05_l' ::regclass) ::json;
 
 -- metadata
-COMMENT ON TABLE environment.dlm250_verO6_f IS '{
+COMMENT ON TABLE environment.dlm250_ver06_f IS '{
     "title": "Digitales Landschaftsmodell 1:250 000 - Verkehrsbauwerke und -anlagen, dargestellt durch flächenhafte Objekte",
     "description": "Das Digitale Landschaftsmodell 1:250 000 (DLM250) beschreibt die topographischen Objekte der Landschaft im Vektorformat. Die Objekte werden einer bestimmten Objektart zugeordnet und durch ihre räumliche Lage, ihren geometrischen Typ und beschreibende Attribute definiert.",
     "language": [ "ger" ],
@@ -876,7 +876,7 @@ COMMENT ON TABLE environment.dlm250_verO6_f IS '{
 SELECT obj_description('environment.dlm250_ver06_f' ::regclass) ::json;
 
 -- metadata
-COMMENT ON TABLE environment.dlm250_verO6_l IS '{
+COMMENT ON TABLE environment.dlm250_ver06_l IS '{
     "title": "Digitales Landschaftsmodell 1:250 000 - Verkehrsbauwerke und -anlagen, dargestellt durch linienhafte Objekte",
     "description": "Das Digitale Landschaftsmodell 1:250 000 (DLM250) beschreibt die topographischen Objekte der Landschaft im Vektorformat. Die Objekte werden einer bestimmten Objektart zugeordnet und durch ihre räumliche Lage, ihren geometrischen Typ und beschreibende Attribute definiert.",
     "language": [ "ger" ],
@@ -931,7 +931,7 @@ COMMENT ON TABLE environment.dlm250_verO6_l IS '{
 SELECT obj_description('environment.dlm250_ver06_l' ::regclass) ::json;
 
 -- metadata
-COMMENT ON TABLE environment.dlm250_verO6_p IS '{
+COMMENT ON TABLE environment.dlm250_ver06_p IS '{
     "title": "Digitales Landschaftsmodell 1:250 000 - Verkehrsbauwerke und -anlagen, dargestellt durch punkthafte Objekte",
     "description": "Das Digitale Landschaftsmodell 1:250 000 (DLM250) beschreibt die topographischen Objekte der Landschaft im Vektorformat. Die Objekte werden einer bestimmten Objektart zugeordnet und durch ihre räumliche Lage, ihren geometrischen Typ und beschreibende Attribute definiert.",
     "language": [ "ger" ],
