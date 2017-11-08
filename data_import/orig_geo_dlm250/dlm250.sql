@@ -20,7 +20,7 @@ COMMENT ON TABLE environment.dlm250_sie01_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -69,7 +69,7 @@ COMMENT ON TABLE environment.dlm250_sie01_p IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -118,7 +118,7 @@ COMMENT ON TABLE environment.dlm250_sie02_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -170,7 +170,7 @@ COMMENT ON TABLE environment.dlm250_sie03_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -221,7 +221,7 @@ COMMENT ON TABLE environment.dlm250_sie03_l IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -270,7 +270,7 @@ COMMENT ON TABLE environment.dlm250_sie03_p IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -322,7 +322,7 @@ COMMENT ON TABLE environment.dlm250_sie04_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -370,7 +370,7 @@ COMMENT ON TABLE environment.dlm250_sie04_l IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -420,7 +420,7 @@ COMMENT ON TABLE environment.dlm250_sie04_p IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -470,7 +470,7 @@ COMMENT ON TABLE environment.dlm250_sie05_p IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -523,7 +523,7 @@ COMMENT ON TABLE environment.dlm250_ver01_l IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -581,7 +581,7 @@ COMMENT ON TABLE environment.dlm250_ver02_l IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -631,7 +631,7 @@ COMMENT ON TABLE environment.dlm250_ver03_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -678,7 +678,7 @@ COMMENT ON TABLE environment.dlm250_ver03_l IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -733,7 +733,7 @@ COMMENT ON TABLE environment.dlm250_ver04_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -786,7 +786,7 @@ COMMENT ON TABLE environment.dlm250_ver05_l IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -835,7 +835,7 @@ COMMENT ON TABLE environment.dlm250_ver06_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -885,7 +885,7 @@ COMMENT ON TABLE environment.dlm250_ver06_l IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -940,7 +940,7 @@ COMMENT ON TABLE environment.dlm250_ver06_p IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -998,7 +998,7 @@ COMMENT ON TABLE environment.dlm250_veg01_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1047,7 +1047,7 @@ COMMENT ON TABLE environment.dlm250_veg02_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1097,7 +1097,7 @@ COMMENT ON TABLE environment.dlm250_veg03_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1147,7 +1147,7 @@ COMMENT ON TABLE environment.dlm250_veg04_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1197,7 +1197,7 @@ COMMENT ON TABLE environment.dlm250_gew01_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1256,7 +1256,7 @@ COMMENT ON TABLE environment.dlm250_gew01_l IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1316,7 +1316,7 @@ COMMENT ON TABLE environment.dlm250_gew02_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1367,7 +1367,7 @@ COMMENT ON TABLE environment.dlm250_gew02_l IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1417,7 +1417,7 @@ COMMENT ON TABLE environment.dlm250_gew02_p IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1469,7 +1469,7 @@ COMMENT ON TABLE environment.dlm250_gew03_l IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1523,7 +1523,7 @@ COMMENT ON TABLE environment.dlm250_geb01_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1579,7 +1579,7 @@ COMMENT ON TABLE environment.dlm250_geb01_l IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1628,7 +1628,7 @@ COMMENT ON TABLE environment.dlm250_geb02_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1678,7 +1678,7 @@ COMMENT ON TABLE environment.dlm250_geb03_f IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1732,7 +1732,7 @@ COMMENT ON TABLE environment.dlm250_rel01_l IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1786,7 +1786,7 @@ COMMENT ON TABLE environment.dlm250_rel01_p IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1834,7 +1834,7 @@ COMMENT ON TABLE environment.dlm250_rel02_p IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
@@ -1883,7 +1883,7 @@ COMMENT ON TABLE environment.dlm250_hdu01_b IS '{
         "extent": "Germany",
         "resolution": "none"},
     "temporal":
-        {"reference_date": "none",
+        {"reference_date": "2015-12-31",
         "start": "none",
         "end": "none",
         "resolution": "none"},
