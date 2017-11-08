@@ -30,9 +30,9 @@ COMMENT ON TABLE environment.dlm250_sie01_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -79,9 +79,9 @@ COMMENT ON TABLE environment.dlm250_sie01_p IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -128,9 +128,9 @@ COMMENT ON TABLE environment.dlm250_sie02_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -180,9 +180,9 @@ COMMENT ON TABLE environment.dlm250_sie03_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -231,9 +231,9 @@ COMMENT ON TABLE environment.dlm250_sie03_l IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -280,9 +280,9 @@ COMMENT ON TABLE environment.dlm250_sie03_p IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -332,9 +332,9 @@ COMMENT ON TABLE environment.dlm250_sie04_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -380,9 +380,9 @@ COMMENT ON TABLE environment.dlm250_sie04_l IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -430,9 +430,9 @@ COMMENT ON TABLE environment.dlm250_sie04_p IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -480,9 +480,9 @@ COMMENT ON TABLE environment.dlm250_sie05_p IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -533,9 +533,9 @@ COMMENT ON TABLE environment.dlm250_ver01_l IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -591,9 +591,9 @@ COMMENT ON TABLE environment.dlm250_ver02_l IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -641,9 +641,9 @@ COMMENT ON TABLE environment.dlm250_ver03_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -688,9 +688,9 @@ COMMENT ON TABLE environment.dlm250_ver03_l IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -743,9 +743,9 @@ COMMENT ON TABLE environment.dlm250_ver04_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -796,9 +796,9 @@ COMMENT ON TABLE environment.dlm250_ver05_l IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -845,9 +845,9 @@ COMMENT ON TABLE environment.dlm250_ver06_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -895,9 +895,9 @@ COMMENT ON TABLE environment.dlm250_ver06_l IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -950,9 +950,9 @@ COMMENT ON TABLE environment.dlm250_ver06_p IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1008,9 +1008,9 @@ COMMENT ON TABLE environment.dlm250_veg01_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1057,9 +1057,9 @@ COMMENT ON TABLE environment.dlm250_veg02_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1107,9 +1107,9 @@ COMMENT ON TABLE environment.dlm250_veg03_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1157,9 +1157,9 @@ COMMENT ON TABLE environment.dlm250_veg04_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1207,9 +1207,9 @@ COMMENT ON TABLE environment.dlm250_gew01_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1266,9 +1266,9 @@ COMMENT ON TABLE environment.dlm250_gew01_l IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1326,9 +1326,9 @@ COMMENT ON TABLE environment.dlm250_gew02_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1377,9 +1377,9 @@ COMMENT ON TABLE environment.dlm250_gew02_l IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1427,9 +1427,9 @@ COMMENT ON TABLE environment.dlm250_gew02_p IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1479,9 +1479,9 @@ COMMENT ON TABLE environment.dlm250_gew03_l IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1533,9 +1533,9 @@ COMMENT ON TABLE environment.dlm250_geb01_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1589,9 +1589,9 @@ COMMENT ON TABLE environment.dlm250_geb01_l IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1638,9 +1638,9 @@ COMMENT ON TABLE environment.dlm250_geb02_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1688,9 +1688,9 @@ COMMENT ON TABLE environment.dlm250_geb03_f IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1742,9 +1742,9 @@ COMMENT ON TABLE environment.dlm250_rel01_l IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1796,9 +1796,9 @@ COMMENT ON TABLE environment.dlm250_rel01_p IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1844,9 +1844,9 @@ COMMENT ON TABLE environment.dlm250_rel02_p IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
@@ -1893,9 +1893,9 @@ COMMENT ON TABLE environment.dlm250_hdu01_b IS '{
     "license":
         {"id": "geonutzv-de-2013-03-19",
         "name": "GeoNutzV",
-        "version": "none",
+        "version": "2013-03-19",
         "url": "https://www.geodatenzentrum.de/docpdf/geonutzv.pdf",
-        "instruction": "none",
+        "instruction":  "Geodaten und Geodatendienste, einschließlich zugehöriger Metadaten, werden für alle derzeit bekannten sowie für alle zukünftig bekannten Zwecke kommerzieller und nicht kommerzieller Nutzung geldleistungsfrei zur Verfügung gestellt, soweit durch besondere Rechtsvorschrift nichts anderes bestimmt ist oder vertragliche oder gesetzliche Rechte Dritter dem nicht entgegenstehen.",
         "copyright": "© GeoBasis - DE / BKG 2017"},
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
