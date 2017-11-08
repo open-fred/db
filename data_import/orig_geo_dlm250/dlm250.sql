@@ -1874,7 +1874,7 @@ COMMENT ON TABLE environment.dlm250_rel02_p IS '{
 SELECT obj_description('environment.dlm250_rel02_p' ::regclass) ::json;
 
 -- metadata
-COMMENT ON TABLE environment.dlm250_hdu01 IS '{
+COMMENT ON TABLE environment.dlm250_hdu01_b IS '{
     "title": "Digitales Landschaftsmodell 1:250 000 - Referenzen",
     "description": "Das Digitale Landschaftsmodell 1:250 000 (DLM250) beschreibt die topographischen Objekte der Landschaft im Vektorformat. Die Objekte werden einer bestimmten Objektart zugeordnet und durch ihre räumliche Lage, ihren geometrischen Typ und beschreibende Attribute definiert.",
     "language": [ "ger" ],
@@ -1900,7 +1900,7 @@ COMMENT ON TABLE environment.dlm250_hdu01 IS '{
     "contributors": [
         {"name": "KilianZimmerer", "email": "", "date": "2017-11-08", "comment": "create metadata"} ],
     "resources": [
-        {"name": "environment.dlm250_hdu01",        
+        {"name": "environment.dlm250_hdu01_b",        
         "format": "PostgreSQL",
         "fields": [
             {"name": "id", "description": "Unique identifier", "unit": "none" },
@@ -1916,4 +1916,4 @@ COMMENT ON TABLE environment.dlm250_hdu01 IS '{
     "metadata_version": "1.3"}';
 
 -- select description
-SELECT obj_description('environment.dlm250_hdu01' ::regclass) ::json;
+SELECT obj_description('environment.dlm250_hdu01_b' ::regclass) ::json;
