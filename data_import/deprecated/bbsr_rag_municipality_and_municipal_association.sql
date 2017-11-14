@@ -28,14 +28,15 @@ COMMENT ON TABLE deprecated.bbsr_rag_municipality_and_municipal_association IS '
 	"sources": [
 		{"name": "Bundesinstitut für Bau-, Stadt- und Raumforschung ", "description": "Raumabgrenzungen: Referenzdateien und Karten", "url": "http://www.bbsr.bund.de/BBSR/DE/Raumbeobachtung/Downloads/downloads_node.html", "license": "Datenlizenz Deutschland – Namensnennung - Version 2.0", "copyright": "© BBSR Bonn 2015"}],
 	"license": 
-		{"id": "",
+		{"id": "dl-de/by-2-0",
 		"name": "Datenlizenz Deutschland - Namensnennung",
 		"version": "2.0",
 		"url": "https://www.govdata.de/dl-de/by-2-0",
 		"instruction": "",
 		"copyright": "© BBSR Bonn 2015"},
 	"contributors": [
-		{"name": "Ludee", "email": "", "date": "2015-08-12", "comment": "Create metadata"}],
+		{"name": "Ludee", "email": "", "date": "2015-08-12", "comment": "Create metadata"},
+        {"name": "KilianZimmerer", "email": "", "date": "2017-11-14", "comment": "update metadata to v.1.3"}],
 	"resources": [
 		{"name": "deprecated.bbsr_rag_municipality_and_municipal_association",		
 		"format": "PostgreSQL",

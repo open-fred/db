@@ -30,12 +30,7 @@ COMMENT ON TABLE deprecated.bbsr_rag_spatial_types_per_mun IS '{
             "description": "",
             "url": "",
             "license": "",
-            "copyright": "\u00a9 BBSR Bonn 2015"},
-            {"name": "",
-            "description": "",
-            "url": "",
-            "license": "",
-            "copyright": "\u00a9 BBSR Bonn 2015"}],
+            "copyright": ""}],
     "license": {
         "id": "dl-de/by-2-0",
         "name": "Datenlizenz Deutschland \\u2014 Namensnennung",
