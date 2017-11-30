@@ -4,10 +4,12 @@ This script contains functions for the database connection
 
 __copyright__   = "Reiner Lemoine Institut"
 __license__     = "GNU Affero General Public License Version 3 (AGPL-3.0)"
-__url__         = "https://github.com/openego/data_processing/blob/master/LICENSE"
+__url__         = "https://www.gnu.org/licenses/agpl-3.0.en.html"
 __author__      = "Ludee"
 
+import os
 import sys
+import time
 from sqlalchemy import create_engine
 import getpass
 import logging
@@ -52,7 +54,7 @@ def database_session(section):
     return conn
 
 
-def log():
+def logger():
     """
     Configure logging in console and log file
     
@@ -62,26 +64,28 @@ def log():
     
     Returns
     -------
-    None
+    Logging in console and file
     """
-
-    # set logger
-    logger = logging.getLogger('PreProcessingLogger')
-    logger.setLevel(logging.INFO)
-    # file handler (fh)
-    fh = logging.FileHandler(r'openfred_preprocessing.log')
-    fh.setLevel(logging.INFO)
+    
+    # set root logger (rl)
+    rl = logging.getLogger('PreProcessingLogger')
+    rl.setLevel(logging.INFO)
+    rl.propagate = False
+    
+    # format
+    formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s',
+                                    datefmt='%Y-%m-%d %H:%M:%S')
+        
     # console handler (ch)
     ch = logging.StreamHandler()
     ch.setLevel(logging.INFO)
-    # create date format
-    formatter = logging.Formatter('%(asctime)s %(message)s',
-                                    datefmt='%Y-%m-%d %I:%M:%S')
-    fh.setFormatter(formatter)
     ch.setFormatter(formatter)
-    # add fh & ch
-    logger.addHandler(fh)
-    logger.addHandler(ch)
+    rl.addHandler(ch)
     
-    return logger
+    # file handler (fh)
+    fh = logging.FileHandler(r'openfred_preprocessing.log')
+    fh.setLevel(logging.INFO)
+    fh.setFormatter(formatter)
+    rl.addHandler(fh)
 
+    return rl
