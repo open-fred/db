@@ -1,3 +1,12 @@
+"""Database IO
+This script contains functions for the database connection
+"""
+
+__copyright__   = "Reiner Lemoine Institut"
+__license__     = "GNU Affero General Public License Version 3 (AGPL-3.0)"
+__url__         = "https://github.com/openego/data_processing/blob/master/LICENSE"
+__author__      = "Ludee"
+
 from sqlalchemy import create_engine
 import getpass
 import sys
