@@ -89,9 +89,10 @@ def log():
 
     return loggerq
 
-#TODO:
 def download(links, download_files):
-    """Download files from links
+    # TODO: https downloads not possbile yet
+    """Download files from links.
+
 
     :param links: list
     :param download_files: list
@@ -110,29 +111,34 @@ def download(links, download_files):
     for i, link in enumerate(links):
         urllib.request.urlretrieve(link, target + download_files[i])
 
-def exctraction(file):
+def extraction(files):
+    # TODO: return
     """Decompresses files and exctract relevant files
 
-    :param file: string
+    :param files: list of strings
 
     :return:
     """
 
     # download directory
-    download = './download_data/'
+    download_dir = './download_data/'
+
 
     # unzip files
-    if file.endswith('.zip'):
-        zip_ref = zipfile.ZipFile(target + download_file, 'r')
-        zip_ref.extractall(target)
-        zip_ref.close()
-    else:
-        raise NotImplementedError('Compression of this file format not implemented')
+    for f in files:
+        if f.endswith('.zip'):
+            zip_ref = zipfile.ZipFile(download_dir + f, 'r')
+            zip_ref.extractall(download_dir + 'unzip/')
+            zip_ref.close()
+        else:
+            raise NotImplementedError('This file format not implemented')
+
     # go through directory and find files
 
-    # return these files
+    # return these files in a list
 
 def write_to_db(file):
+    # TODO: shapefile to database, csv to database, xlsx to database
     """Write file to database using dataframe to sql from pandas
 
     :return:
