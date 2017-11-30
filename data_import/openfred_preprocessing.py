@@ -44,7 +44,7 @@ def preprocessing():
     ]
 
     # get database connection
-    conn = io.oedb_session(section='reiners_db')
+    conn = io.database_session(section='reiners_db')
 
     # iterate over list of sql- and python-snippets and execute them
     for snippet in snippets:
