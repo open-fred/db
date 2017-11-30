@@ -13,6 +13,8 @@ from sqlalchemy import create_engine
 import getpass
 import logging
 import urllib.request
+import zipfile
+
 
 def database_session(section):
     """
@@ -111,11 +113,21 @@ def download(links, download_files):
 def exctraction(file):
     """Decompresses files and exctract relevant files
 
+    :param file: string
+
     :return:
     """
 
-    # unzip files
+    # download directory
+    download = './download_data/'
 
+    # unzip files
+    if file.endswith('.zip'):
+        zip_ref = zipfile.ZipFile(target + download_file, 'r')
+        zip_ref.extractall(target)
+        zip_ref.close()
+    else:
+        raise NotImplementedError('Compression of this file format not implemented')
     # go through directory and find files
 
     # return these files
