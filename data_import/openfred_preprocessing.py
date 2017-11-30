@@ -16,15 +16,9 @@ import codecs
 from tools import io
 
 def preprocessing():
-    # Configure logging
-    logger = logging.getLogger('EEEE')
-    logger.setLevel(logging.INFO)
-    ch = logging.StreamHandler()
-    ch.setLevel(logging.INFO)
-    formatter = logging.Formatter('%(asctime)s %(message)s',
-                                  datefmt='%Y-%m-%d %I:%M:%S')
-    ch.setFormatter(formatter)
-    logger.addHandler(ch)
+    """prepare database and import data """
+    
+    logger = log()
 
     # get current time and inform about start
     total_time = time.time()

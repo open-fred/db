@@ -29,3 +29,14 @@ def database_session():
                                                   database)).connect()
 
     return conn
+
+
+def log():
+    """configure logging"""
+    logger = logging.getLogger('EEEE')
+    logger.setLevel(logging.INFO)
+    ch = logging.StreamHandler()
+    ch.setLevel(logging.INFO)
+    formatter = logging.Formatter('%(asctime)s %(message)s',
+                                    datefmt='%Y-%m-%d %I:%M:%S')
+    return logger
