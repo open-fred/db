@@ -17,12 +17,12 @@ import urllib.request
 def database_session(section):
     """
     Get SQLAlchemy session object with valid connection to OEDB
-    
+
     Parameters
     ----------
     section : str
         section (database) in config file
-    
+
     Returns
     -------
     conn : SQLAlchemy connection object
@@ -57,11 +57,11 @@ def database_session(section):
 def log():
     """
     Configure logging in console and log file
-    
+
     Parameters
     ----------
     None
-    
+
     Returns
     -------
     None
@@ -91,29 +91,40 @@ def log():
 def download(links, download_files):
     """Download files from links
 
+    :param links: list
+    :param download_files: list
+
     :return:
     """
 
+    # directory in that data is downloaded
     target = './download_data/'
 
-
+    # create directory if not existent
     if not os.path.exists(target):
         os.mkdir(target)
 
+    # perform download
     for i, link in enumerate(links):
         urllib.request.urlretrieve(link, target + download_files[i])
 
-def decompression():
-    """Decompresses files
+def exctraction(file):
+    """Decompresses files and exctract relevant files
 
     :return:
     """
-    pass
 
-def write_to_db():
+    # unzip files
+
+    # go through directory and find files
+
+    # return these files
+
+def write_to_db(file):
     """Write file to database using dataframe to sql from pandas
 
     :return:
     """
-    pass
+
+    # write file to database
 
