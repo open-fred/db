@@ -31,6 +31,7 @@ CREATE MATERIALIZED VIEW            model_draft.fred_dp_river_mview AS
         GROUP BY    land,modellart,objart,objart_txt,gwk,nam
         ORDER BY    gwk)
     SELECT  nextval('model_draft.fred_dp_river_mview_id') ::integer AS river_id,
+            substring(gwk from 1 for 1)::integer AS riversystem_id,
             gwk,
             nam,
             ST_UNION(geom) ::geometry(MultiLineString,3035) AS geom
@@ -47,6 +48,57 @@ CREATE UNIQUE INDEX fred_dp_river_mview_idx ON  model_draft.fred_dp_river_mview 
 -- index GIST (geom)
 CREATE INDEX fred_dp_river_mview_gidx
     ON model_draft.fred_dp_river_mview USING GIST (geom);
+
+
+
+-- river systems (Stromgebiete)
+/*
+SELECT  river_id,
+        gwk,
+        substring(gwk from 1 for 1)
+FROM    model_draft.fred_dp_river_mview
+ORDER BY gwk;
+*/
+
+DROP MATERIALIZED VIEW IF EXISTS    model_draft.fred_dp_river_systems_mview CASCADE;
+CREATE MATERIALIZED VIEW            model_draft.fred_dp_river_systems_mview AS
+    WITH    riversystem AS (
+        SELECT 1 AS riversystem_id, 'Donau' AS riversystem_name  UNION ALL 
+        SELECT 2 AS riversystem_id, 'Rhein' AS riversystem_name  UNION ALL 
+        SELECT 3 AS riversystem_id, 'Ems' AS riversystem_name  UNION ALL 
+        SELECT 4 AS riversystem_id, 'Weser' AS riversystem_name  UNION ALL 
+        SELECT 5 AS riversystem_id, 'Elbe' AS riversystem_name  UNION ALL 
+        SELECT 6 AS riversystem_id, 'Oder' AS riversystem_name  UNION ALL 
+        SELECT 9 AS riversystem_id, 'Küstengebiet' AS riversystem_name ),
+            river AS (
+        SELECT  substring(gwk from 1 for 1)::integer AS riversystem_id,
+                count(geom) AS river_cnt,
+                sum(ST_Length(geom)) AS river_lenght,
+                ST_UNION(geom) ::geometry(MultiLineString,3035) AS geom
+        FROM    model_draft.fred_dp_river_mview
+        GROUP BY substring(gwk from 1 for 1)
+        ORDER BY substring(gwk from 1 for 1) )
+    SELECT  a.riversystem_id,
+            a.riversystem_name,
+            b.river_cnt,
+            b.river_lenght,
+            b.geom        
+    FROM    riversystem AS a INNER JOIN
+            river AS b 
+                ON (a.riversystem_id =  b.riversystem_id)
+    ORDER BY riversystem_id;
+
+-- grant (oeuser)
+ALTER TABLE model_draft.fred_dp_river_systems_mview OWNER TO oeuser;
+
+-- index (hydropower_id)
+CREATE UNIQUE INDEX fred_dp_river_systems_mview_idx
+    ON  model_draft.fred_dp_river_systems_mview (riversystem_id);
+
+-- index GIST (geom)
+CREATE INDEX fred_dp_river_systems_mview_geom_gidx
+    ON model_draft.fred_dp_river_systems_mview USING GIST (geom);
+
 
 
 -- union hydro power plants
@@ -105,6 +157,7 @@ CREATE MATERIALIZED VIEW            model_draft.fred_dp_hydropower_on_river_mvie
         a.voltage_level,
         a.source,
         b.river_id,
+        b.riversystem_id,
         b.gwk,
         b.nam,
         a.geom,
@@ -154,8 +207,32 @@ CREATE MATERIALIZED VIEW            model_draft.fred_dp_river_with_hydropower_mv
             a.capacity_sum,
             a.count,
             b.gwk,
+            b.riversystem_id,
+            c.riversystem_name,
             b.nam,
             b.geom
-    FROM    capacity AS a INNER JOIN
-            model_draft.fred_dp_river_mview AS b ON (a.river_id = b.river_id)
+    FROM    capacity AS a
+            INNER JOIN model_draft.fred_dp_river_mview AS b ON (a.river_id = b.river_id)
+            INNER JOIN model_draft.fred_dp_river_systems_mview AS c ON (b.riversystem_id = c.riversystem_id)
     ORDER BY capacity_sum DESC;
+
+-- grant (oeuser)
+ALTER TABLE model_draft.fred_dp_river_with_hydropower_mview OWNER TO oeuser;
+
+-- index (hydropower_id)
+CREATE UNIQUE INDEX fred_dp_river_with_hydropower_mview_idx
+    ON  model_draft.fred_dp_river_with_hydropower_mview (river_id);
+
+-- index GIST (geom)
+CREATE INDEX fred_dp_river_with_hydropower_mview_geom_gidx
+    ON model_draft.fred_dp_river_with_hydropower_mview USING GIST (geom);
+
+
+-- sum per riversytem
+SELECT  riversystem_id,
+        riversystem_name,
+        SUM(capacity_sum) AS capacity_sum,
+        COUNT(geom) AS count
+FROM    model_draft.fred_dp_river_with_hydropower_mview
+GROUP BY riversystem_id, riversystem_name
+ORDER BY capacity_sum DESC;
