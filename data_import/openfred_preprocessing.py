@@ -1,13 +1,12 @@
-"""eGo Data prerocessing (eGoDP)
-This script opens a oedb database connection and executes different parts of eGo.
+"""Database PreProcessing
+This script opens a database connection and executes different imports.
 Reads python and SQL scripts and gives logging infos during the execution.
-Also see corresponding BPML diagram.
 """
 
-__copyright__ = "Reiner Lemoine Institut gGmbH"
-__license__ = "GNU Affero General Public License Version 3 (AGPL-3.0)"
-__url__ = "https://github.com/openego/data_processing/blob/master/LICENSE"
-__author__ = "gplssm"
+__copyright__   = "Reiner Lemoine Institut"
+__license__     = "GNU Affero General Public License Version 3 (AGPL-3.0)"
+__url__         = "https://github.com/openego/data_processing/blob/master/LICENSE"
+__author__      = "gplssm, Ludee"
 
 import pandas as pd
 import logging
@@ -29,7 +28,7 @@ def preprocessing():
 
     # get current time and inform about start
     total_time = time.time()
-    logger.info('ego preprocessing started...')
+    logger.info('PreProcessing started...')
 
     # list of sql- and python-snippets that process the data in correct order
     snippet_dir = os.path.abspath(
@@ -45,7 +44,7 @@ def preprocessing():
     ]
 
     # get database connection
-    conn = io.oedb_session(section='oedb')
+    conn = io.oedb_session(section='reiners_db')
 
     # iterate over list of sql- and python-snippets and execute them
     for snippet in snippets:
@@ -75,7 +74,7 @@ def preprocessing():
     # close database connection
     conn.close()
 
-    logger.info('Data processing script successfully executed in {:.2f} seconds'.format(
+    logger.info('PreProcessing script successfully executed in {:.2f} seconds'.format(
         time.time() - total_time))
 
 
