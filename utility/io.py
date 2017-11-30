@@ -13,6 +13,9 @@ import time
 from sqlalchemy import create_engine
 import getpass
 import logging
+import urllib.request
+import zipfile
+
 
 def database_session(section):
     """
@@ -88,4 +91,3 @@ def logger():
     fh.setFormatter(formatter)
     rl.addHandler(fh)
 
-    return rl
