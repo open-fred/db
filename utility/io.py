@@ -13,9 +13,20 @@ import getpass
 import logging
 
 def database_session(section):
-    """Get SQLAlchemy session object with valid connection to OEDB"""
+    """
+    Get SQLAlchemy session object with valid connection to OEDB
+    
+    Parameters
+    ----------
+    section : str
+        section (database) in config file
+    
+    Returns
+    -------
+    conn : SQLAlchemy connection object
+    """
 
-    # get session object by oemof.db tools (requires .oemof/config.ini
+    # get session object by oemof.db tools (requires .oemof/config.ini)
     try:
         from oemof import db
         conn = db.connection(section=section)
