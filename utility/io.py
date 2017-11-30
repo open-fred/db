@@ -53,7 +53,17 @@ def database_session(section):
 
 
 def log():
-    """configure logging"""
+    """
+    Configure logging in console and log file
+    
+    Parameters
+    ----------
+    None
+    
+    Returns
+    -------
+    None
+    """
 
     # set logger
     logger = logging.getLogger('PreProcessingLogger')
