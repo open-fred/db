@@ -8,9 +8,11 @@ __url__         = "https://github.com/openego/data_processing/blob/master/LICENS
 __author__      = "Ludee"
 
 import sys
+import os
 from sqlalchemy import create_engine
 import getpass
 import logging
+import urllib.request
 
 def database_session(section):
     """Get SQLAlchemy session object with valid connection to OEDB"""
@@ -61,6 +63,36 @@ def log():
     # add fh & ch
     logger.addHandler(fh)
     logger.addHandler(ch)
-    
-    return logger
+
+    return loggerq
+
+#TODO:
+def download(links, download_files):
+    """Download files from links
+
+    :return:
+    """
+
+    target = './download_data/'
+
+
+    if not os.path.exists(target):
+        os.mkdir(target)
+
+    for i, link in enumerate(links):
+        urllib.request.urlretrieve(link, target + download_files[i])
+
+def decompression():
+    """Decompresses files
+
+    :return:
+    """
+    pass
+
+def write_to_db():
+    """Write file to database using dataframe to sql from pandas
+
+    :return:
+    """
+    pass
 
