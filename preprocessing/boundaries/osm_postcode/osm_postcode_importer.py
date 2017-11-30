@@ -8,12 +8,14 @@ from utility.io import download
 # - for non automatic download files must be moved to the target directory
 
 # download links. Assign 'None' for non-automatic download:
-links = ["http://spatialkeydocs.s3.amazonaws.com/FL_insurance_sample.csv.zip"]
-download_files = ['plz_1stellig.zip']
+links = None
+download_files = None # not possible to download https files
 schema = 'boundaries'
 tablename = 'osm_postcode'
 
 if links == None:
+    # (1) decompress files
+    # (2) write to database and do things in between (in this case add 'stelle')
     pass
 else:
     download(links, download_files)
