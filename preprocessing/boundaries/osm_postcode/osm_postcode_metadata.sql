@@ -55,6 +55,7 @@ COMMENT ON TABLE boundaries.osm_postcode IS '{
             {"name": "note", "description": "Comment and name", "unit": "none"},
             {"name": "geom", "description": "Geometrie", "unit": "none"} ] } ],
     "metadata_version": "1.3"}';
-
+/*
 -- ego scenario log (version,io,schema_name,table_name,script_name,comment)
 SELECT ego_scenario_log('v0.2.10','output','boundaries','osm_postcode','osm_postcode_metadata.sql','metadata');
+*/

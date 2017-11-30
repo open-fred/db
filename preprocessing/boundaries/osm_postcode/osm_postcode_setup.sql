@@ -19,11 +19,12 @@ CREATE TABLE            boundaries.osm_postcode (
     geom            geometry(MultiPolygon,4326),
     CONSTRAINT osm_postcode_pkey PRIMARY KEY (id) );
 
--- grant (oeuser)
-ALTER TABLE boundaries.osm_postcode OWNER TO oeuser;
-
 -- index GIST (geom)
 CREATE INDEX osm_postcode_geom_idx ON boundaries.osm_postcode USING gist (geom);
+
+/*
+-- grant (oeuser)
+ALTER TABLE boundaries.osm_postcode OWNER TO oeuser;
 
 -- ego scenario log (version,io,schema_name,table_name,script_name,comment)
 SELECT ego_scenario_log('v0.2.10','setup','boundaries','osm_postcode','osm_postcode_metadata.sql','metadata');
@@ -65,3 +66,4 @@ INSERT INTO boundaries.osm_postcode (reference_date,stellen,plz,note,geom)
 
 -- ego scenario log (version,io,schema_name,table_name,script_name,comment)
 SELECT ego_scenario_log('v0.2.10','setup','boundaries','osm_postcode','osm_postcode_metadata.sql','metadata');
+*/

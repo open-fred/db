@@ -7,11 +7,12 @@ __license__     = "GNU Affero General Public License Version 3 (AGPL-3.0)"
 __url__         = "https://github.com/openego/data_processing/blob/master/LICENSE"
 __author__      = "Ludee"
 
+import sys
 from sqlalchemy import create_engine
 import getpass
-import sys
+import logging
 
-def database_session():
+def database_session(section):
     """Get SQLAlchemy session object with valid connection to OEDB"""
 
     # get session object by oemof.db tools (requires .oemof/config.ini
@@ -49,3 +50,4 @@ def log():
     formatter = logging.Formatter('%(asctime)s %(message)s',
                                     datefmt='%Y-%m-%d %I:%M:%S')
     return logger
+

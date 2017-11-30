@@ -9,11 +9,11 @@ __url__         = "https://github.com/openego/data_processing/blob/master/LICENS
 __author__      = "gplssm, Ludee"
 
 import pandas as pd
-import logging
+
 import time
 import os
 import codecs
-from utility import io
+from utility.io import *
 
 def preprocessing():
     """prepare database and import data """
@@ -25,20 +25,14 @@ def preprocessing():
     logger.info('PreProcessing started...')
 
     # list of sql- and python-snippets that process the data in correct order
-    snippet_dir = os.path.abspath(
-        os.path.join(os.path.dirname(__file__),
-                             'preprocessing'))
-    script_dir = os.path.abspath(
-        os.path.join(os.path.dirname(__file__),
-                     'python_scripts'))
 
     snippets = [
-     'ego_pre_voltage_level.sql',
-     'ego_pre_slp_parameters.sql'
+    'preprocessing\\boundaries\\osm_postcode\\osm_postcode_setup.sql',
+    'preprocessing\\boundaries\\osm_postcode\\osm_postcode_metadata.sql',
     ]
 
     # get database connection
-    conn = io.database_session(section='reiners_db')
+    conn = database_session(section='reiners_db')
 
     # iterate over list of sql- and python-snippets and execute them
     for snippet in snippets:
@@ -46,12 +40,12 @@ def preprocessing():
         snippet_time = time.time()
         logger.info("Execute '{}' ...".format(snippet))
         if os.path.splitext(snippet)[1] == '.sql':
-            snippet_str = open(os.path.join(snippet_dir, snippet)).read()
+            snippet_str = open(os.path.join(snippet)).read()
 
             # execute desired sql snippet
             conn.execution_options(autocommit=True).execute(snippet_str)
         elif os.path.splitext(snippet)[1] == '.py':
-            filename = os.path.join(script_dir, snippet)
+            filename = os.path.join(snippet)
             script_str = open(filename, "rb").read()
 
             # execute desired sql snippet
