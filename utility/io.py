@@ -43,11 +43,24 @@ def database_session(section):
 
 def log():
     """configure logging"""
-    logger = logging.getLogger('EEEE')
+
+    # set logger
+    logger = logging.getLogger('PreProcessingLogger')
     logger.setLevel(logging.INFO)
+    # file handler (fh)
+    fh = logging.FileHandler(r'openfred_preprocessing.log')
+    fh.setLevel(logging.INFO)
+    # console handler (ch)
     ch = logging.StreamHandler()
     ch.setLevel(logging.INFO)
+    # create date format
     formatter = logging.Formatter('%(asctime)s %(message)s',
                                     datefmt='%Y-%m-%d %I:%M:%S')
+    fh.setFormatter(formatter)
+    ch.setFormatter(formatter)
+    # add fh & ch
+    logger.addHandler(fh)
+    logger.addHandler(ch)
+    
     return logger
 
