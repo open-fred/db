@@ -15,6 +15,7 @@ import getpass
 import logging
 import urllib.request
 import zipfile
+import pandas as pd
 
 
 def database_session(section):
@@ -91,7 +92,6 @@ def logger():
     fh.setFormatter(formatter)
     rl.addHandler(fh)
 
-
 def download(links, download_files):
     # TODO: https downloads not possbile yet
     """Download files from links.
@@ -114,13 +114,14 @@ def download(links, download_files):
     for i, link in enumerate(links):
         urllib.request.urlretrieve(link, target + download_files[i])
 
-def extraction(files):
+def extraction(file):
     # TODO: return
     """Decompresses files and exctract relevant files
 
     :param files: list of strings
 
-    :return:
+    :return: list of strings
+        a list with data_files that are in the zipped file
     """
 
     # download directory
@@ -128,24 +129,39 @@ def extraction(files):
 
 
     # unzip files
-    for f in files:
-        if f.endswith('.zip'):
-            zip_ref = zipfile.ZipFile(download_dir + f, 'r')
-            zip_ref.extractall(download_dir + 'unzip/')
-            zip_ref.close()
-        else:
-            raise NotImplementedError('This file format not implemented')
+    file_list=[]
+    if file.endswith('.zip'):
+        zip_ref = zipfile.ZipFile(download_dir + file, 'r')
+        zip_ref.extractall(download_dir + '{}_unzipped/'.format(file))
+        zip_ref.close()
+    else:
+        raise NotImplementedError(
+            'Decompression of this format not implemented')
+    # go through directory and find files (.csv, .shp, .xlsx)
+    for root, dirs, files in os.walk(download_dir + '{}_unzipped/'.format(file)):
+        print(root,dirs,files)
+        for f in files:
+            # Include .csv, .shp and .xlsx files. Exclude private files.
+            if f.endswith(('.csv', '.shp', '.xlsx')) and not f.startswith('.'):
+                file_list.append(root + '/' + f)
 
-    # go through directory and find files
+    return file_list
 
-    # return these files in a list
-
-def write_to_db(file):
+def write_to_db(file, db_con, tablename = 'table_name_fir_file', schemaname = 'schema_name'):
     # TODO: shapefile to database, csv to database, xlsx to database
     """Write file to database using dataframe to sql from pandas
 
     :return:
     """
 
-    # write file to database
+    if file.endswith('.csv'):
+        df = pd.read_csv(file)
+        df.to_sql(con=db_con, name=tablename, schema=schemaname, if_exists='append')
+    elif file.endswith('.xlsx'):
+        # TODO:
+        raise NotImplementedError(
+            '.xlsx format not implemented yet')
+    elif file.endswith('.shp'):
+        raise NotImplementedError(
+            '.shp format not implemented yet')
 
