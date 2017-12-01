@@ -125,6 +125,7 @@ def extraction(file):
     """
 
     # download directory
+    # TODO: automize directory path!
     download_dir = './download_data/'
 
 

@@ -10,8 +10,8 @@ from utility.io import download, extraction, write_to_db, database_session
 # not possible to download https files yet
 links = ['http://spatialkeydocs.s3.amazonaws.com/FL_insurance_sample.csv.zip']
 files = ['plz_2stellig.zip']
-schema = 'test_schema'
-tablename = 'testtable'
+schema = 'boundaries'
+tablename = 'test'
 conn = database_session(section='reiners_db')
 
 
