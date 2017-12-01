@@ -20,12 +20,12 @@ import zipfile
 def database_session(section):
     """
     Get SQLAlchemy session object with valid connection to OEDB
-    
+
     Parameters
     ----------
     section : str
         section (database) in config file
-    
+
     Returns
     -------
     conn : SQLAlchemy connection object
@@ -60,34 +60,92 @@ def database_session(section):
 def logger():
     """
     Configure logging in console and log file
-    
+
     Parameters
     ----------
     None
-    
+
     Returns
     -------
     Logging in console and file
     """
-    
+
     # set root logger (rl)
     rl = logging.getLogger('PreProcessingLogger')
     rl.setLevel(logging.INFO)
     rl.propagate = False
-    
+
     # format
     formatter = logging.Formatter('%(asctime)s %(levelname)s %(message)s',
                                     datefmt='%Y-%m-%d %H:%M:%S')
-        
+
     # console handler (ch)
     ch = logging.StreamHandler()
     ch.setLevel(logging.INFO)
     ch.setFormatter(formatter)
     rl.addHandler(ch)
-    
+
     # file handler (fh)
     fh = logging.FileHandler(r'openfred_preprocessing.log')
     fh.setLevel(logging.INFO)
     fh.setFormatter(formatter)
     rl.addHandler(fh)
+
+
+def download(links, download_files):
+    # TODO: https downloads not possbile yet
+    """Download files from links.
+
+
+    :param links: list
+    :param download_files: list
+
+    :return:
+    """
+
+    # directory in that data is downloaded
+    target = './download_data/'
+
+    # create directory if not existent
+    if not os.path.exists(target):
+        os.mkdir(target)
+
+    # perform download
+    for i, link in enumerate(links):
+        urllib.request.urlretrieve(link, target + download_files[i])
+
+def extraction(files):
+    # TODO: return
+    """Decompresses files and exctract relevant files
+
+    :param files: list of strings
+
+    :return:
+    """
+
+    # download directory
+    download_dir = './download_data/'
+
+
+    # unzip files
+    for f in files:
+        if f.endswith('.zip'):
+            zip_ref = zipfile.ZipFile(download_dir + f, 'r')
+            zip_ref.extractall(download_dir + 'unzip/')
+            zip_ref.close()
+        else:
+            raise NotImplementedError('This file format not implemented')
+
+    # go through directory and find files
+
+    # return these files in a list
+
+def write_to_db(file):
+    # TODO: shapefile to database, csv to database, xlsx to database
+    """Write file to database using dataframe to sql from pandas
+
+    :return:
+    """
+
+    # write file to database
 
