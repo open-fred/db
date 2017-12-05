@@ -91,3 +91,4 @@ def logger():
     fh.setFormatter(formatter)
     rl.addHandler(fh)
 
+    return rl
