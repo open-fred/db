@@ -17,6 +17,8 @@ import logging
 import urllib.request
 import zipfile
 import pandas as pd
+import shapefile
+import numpy as np
 
 
 def database_session(section):
@@ -37,7 +39,7 @@ def database_session(section):
     try:
         from oemof import db
         conn = db.connection(section=section)
-    
+
     # provide connection parameters manually
     except:
         print('Please provide connection parameters to database:\n' +
@@ -55,7 +57,7 @@ def database_session(section):
                                                   host,
                                                   port,
                                                   database)).connect()
-    
+
     return conn
 
 
@@ -161,7 +163,7 @@ def extraction(file):
             # Include .csv, .shp and .xlsx files. Exclude private files.
             if f.endswith(('.csv', '.shp', '.xlsx')) and not f.startswith('.'):
                 file_list.append(root + '/' + f)
-
+    print(file_list)
     return file_list
 
 
@@ -189,6 +191,76 @@ def write_to_db(file, db_con, tablename = 'table_name_fir_file', schemaname = 's
         raise NotImplementedError(
             '.xlsx format not implemented yet')
     elif file.endswith('.shp'):
-        raise NotImplementedError(
-            '.shp format not implemented yet')
 
+        # Set up a shapefile reader for our shapefile
+        r = shapefile.Reader(file)
+
+#        polygons = r.shapes()
+#        polygons_points = []
+#        for index, shp in enumerate(polygons):
+#            for index, item in enumerate(shp.points):
+#                polygons_points.append(item[0])
+#        print(polygons_points)
+#        for shape in polygons:
+#            print(shape.points, '\n')
+
+        # Get the shapefile fields but skip the first
+        # one which is a deletion flag used internally
+        # by dbf software
+        fields = r.fields[1:]
+
+        # We are going to keep track of the fields as a
+        # string. We'll use this query fragment for our
+        # insert query later.
+        field_string = ""
+
+        # Loop throug the fields and build our table
+        # creation query.
+        for i in range(len(fields)):
+            # get the field information
+            f = fields[i]
+            # get the field name and lowercase it for consistency
+            f_name = f[0].lower()
+            # add the name to the query and our string list of fields
+            field_string += f_name
+            # If this field isn' the last, we'll add a comma
+            if i != len(fields) - 1:
+                field_string += ","
+            # Close the query on the field.
+            else:
+                field_string += ",geom"
+
+        # Create a python generator for the
+        # shapefiles shapes and records
+        shape_records = (shp_rec for shp_rec in r.iterShapeRecords())
+
+        # Loop through the shapefile data and add it to our new table.
+        for sr in shape_records:
+            # Get the attribute data and set it up as
+            # a query fragment.
+            attributes = ""
+            for r in sr.record:
+                if type(r) == type("string"):
+                    r = r.replace("'", "''")
+                attributes += "'{}'".format(r)
+                attributes += ","
+
+            x = ""
+            # TODO: how to separate two polygons?
+            for index, item in enumerate(sr.shape.points):
+                x += '{} {},'.format(item[1], item[0])
+
+            x = '((' + x[:-1] + '))'
+            # Build our insert query template for this shape record.
+            # Notice we are going to use a PostGIS function
+            # which can turn a WKT geometry into a PostGIS
+            # geometry.
+            query = """INSERT INTO {}.{}
+                             ({})
+                             VALUES ({}
+                             ST_GEOMFROMTEXT('MULTIPOLYGON({})', 4326))"""
+            # Populate our query template with actual data.
+            query = query.format(schemaname, tablename, field_string,
+                                                    attributes, x)
+            # Insert the point data
+            db_con.execution_options(autocommit=True).execute(query)
