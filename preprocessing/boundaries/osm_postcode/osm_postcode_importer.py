@@ -2,25 +2,41 @@
 # TODO: test it with database connection
 
 import sys
-sys.path.insert(0, './../../../')
+sys.path.insert(0, './../../../') # enables import od utility.io
 
 from utility.io import download, extraction, write_to_db, database_session
 
-# links: Assign 'None' for non-automatic download:
-# not possible to download https files yet
-links = None
-files = ['plz-1stellig.shp.zip']
+# urls: Assign 'None' for non-automatic download:
+# !!!not possible to download https files yet!!!
+urls = [None]
+
+# filenames of downloaded files
+files = ['plz-1stellig.shp.zip','plz-2stellig.shp.zip', 'plz-3stellig.shp.zip', 'plz-gebiete.shp.zip']
+
+
+
+# database parameters
 schema = 'boundaries'
+#tablename = 'osm_postcode'
 tablename = 'osm_postcode'
+
 conn = database_session(section='reiners_db')
 
-if links == None:
+
+# In the following automatic download is either performed or not
+if urls == [None] or None:
     pass
 else:
-    download(links, files)
+    download(urls, files)
 
-data_files1 = extraction(files[0]) # exctracts data_file from download files
-write_to_db(data_files1[0], conn, tablename = tablename, schemaname = schema) # write data_file to database
-# add 'stellen': here somethin can be added to this table
-# data_file2 = extraction(files[1])
-# ...
+data_file1 = extraction(files[0]) # exctracts 1st data_file from 'files' list
+write_to_db(data_file1[0], conn, tablename = tablename, schemaname = schema, stellen=1) # write data_file to database
+
+data_file2 = extraction(files[1]) # exctracts 2nd data_file from 'files' list
+write_to_db(data_file2[0], conn, tablename = tablename, schemaname = schema, stellen=2) # write data_file to database
+
+data_file3 = extraction(files[2]) # exctracts 3rd data_file from 'files' list
+write_to_db(data_file3[0], conn, tablename = tablename, schemaname = schema, stellen=3) # write data_file to database
+
+data_file4 = extraction(files[3]) # exctracts 4th data_file from 'files' list
+write_to_db(data_file4[0], conn, tablename = tablename, schemaname = schema, stellen=5) # write data_file to database
