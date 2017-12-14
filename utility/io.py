@@ -18,7 +18,6 @@ import urllib.request
 import zipfile
 import pandas as pd
 import shapefile
-import numpy as np
 
 
 def database_session(section):
@@ -95,7 +94,7 @@ def logger():
     return rl
 
 
-def download(links, download_files):
+def download(urls, download_files):
     """Download files from links.
 
     Note
@@ -104,46 +103,49 @@ def download(links, download_files):
 
     Parameters
     ----------
-    links : list
-        The URL to download from.
+    urls : list
+        The URLs to download from.
     download_files : list
         The files to download.
 
     """
 
-    # directory in that data is downloaded
+    # directory to data is downloaded
     target = './download_data/'
 
-    # create directory if not existent
-    if not os.path.exists(target):
-        os.mkdir(target)
-
     # perform download
-    for i, link in enumerate(links):
+    for i, link in enumerate(urls):
+        if link.startswith('https://'):
+            raise NotImplementedError(
+                'https doanloads are not supported. Please download manually')
+
+        # create directory if not existent
+        if not os.path.exists(target):
+            os.mkdir(target)
+
+        # perform download
         urllib.request.urlretrieve(link, target + download_files[i])
 
 
 def extraction(file):
-    """Decompresses files and exctract relevant files.
+    """Decompression and exctraction of relevant files.
 
     Note
     ----
-    TODO: return
 
     Parameters
     ----------
-    file : :obj:`list` of :obj:`str`
-        A list with files to extract.
+    file : str
+        The file to be extracted
 
     Returns
     -------
-    file_list : :obj:`list` of :obj:`str`
-        A list with files that are in the zipped file.
+    file_list : list
+        A list with filenames (str) that were in the input file.
 
     """
 
     # download directory
-    # TODO: automize directory path!
     download_dir = './download_data/'
 
     # unzip files
@@ -158,21 +160,21 @@ def extraction(file):
 
     # go through directory and find files (.csv, .shp, .xlsx)
     for root, dirs, files in os.walk(download_dir + '{}_unzipped/'.format(file)):
-        print(root, dirs, files)
         for f in files:
             # Include .csv, .shp and .xlsx files. Exclude private files.
             if f.endswith(('.csv', '.shp', '.xlsx')) and not f.startswith('.'):
                 file_list.append(root + '/' + f)
-    print(file_list)
+
     return file_list
 
 
-def write_to_db(file, db_con, tablename = 'table_name_fir_file', schemaname = 'schema_name'):
-    """Write file to database using pandas dataframe to sql.
-
-    Note
-    ----
-    TODO: shapefile to database, csv to database, xlsx to database
+def write_to_db(file,
+                db_con,
+                tablename = 'table_name_for_file',
+                schemaname = 'schema_name',
+                shapetype = None,
+                **kwargs):
+    """Write file to database.
 
     Parameters
     ----------
@@ -183,9 +185,11 @@ def write_to_db(file, db_con, tablename = 'table_name_fir_file', schemaname = 's
 
     """
 
+    # read .csv, .xlsx and .shp files
     if file.endswith('.csv'):
         df = pd.read_csv(file)
         df.to_sql(con=db_con, name=tablename, schema=schemaname, if_exists='append')
+
     elif file.endswith('.xlsx'):
         # TODO:
         raise NotImplementedError(
@@ -194,15 +198,6 @@ def write_to_db(file, db_con, tablename = 'table_name_fir_file', schemaname = 's
 
         # Set up a shapefile reader for our shapefile
         r = shapefile.Reader(file)
-
-#        polygons = r.shapes()
-#        polygons_points = []
-#        for index, shp in enumerate(polygons):
-#            for index, item in enumerate(shp.points):
-#                polygons_points.append(item[0])
-#        print(polygons_points)
-#        for shape in polygons:
-#            print(shape.points, '\n')
 
         # Get the shapefile fields but skip the first
         # one which is a deletion flag used internally
@@ -213,6 +208,10 @@ def write_to_db(file, db_con, tablename = 'table_name_fir_file', schemaname = 's
         # string. We'll use this query fragment for our
         # insert query later.
         field_string = ""
+
+        # adding kwargs fields to the table
+        for key, value in enumerate(kwargs):
+            field_string += value + ','
 
         # Loop throug the fields and build our table
         # creation query.
@@ -234,33 +233,90 @@ def write_to_db(file, db_con, tablename = 'table_name_fir_file', schemaname = 's
         # shapefiles shapes and records
         shape_records = (shp_rec for shp_rec in r.iterShapeRecords())
 
+
+
         # Loop through the shapefile data and add it to our new table.
-        for sr in shape_records:
+        for index, sr in enumerate(shape_records):
             # Get the attribute data and set it up as
             # a query fragment.
+
+            # get the shapetype
+            shapetype = sr.shape.shapeType
+
             attributes = ""
+
+            # adding kwargs attributes to the table
+            for key, value in enumerate(kwargs):
+                attributes += "'{}'".format(kwargs[value])
+                attributes += ","
+
             for r in sr.record:
                 if type(r) == type("string"):
                     r = r.replace("'", "''")
                 attributes += "'{}'".format(r)
                 attributes += ","
 
-            x = ""
-            # TODO: how to separate two polygons?
-            for index, item in enumerate(sr.shape.points):
-                x += '{} {},'.format(item[1], item[0])
+            # if Point
+            if shapetype == 1:
+                x = ""
+                for index, item in enumerate(sr.shape.points):
+                    x += '{} {}'.format(item[0], item[1])
 
-            x = '((' + x[:-1] + '))'
-            # Build our insert query template for this shape record.
-            # Notice we are going to use a PostGIS function
-            # which can turn a WKT geometry into a PostGIS
-            # geometry.
-            query = """INSERT INTO {}.{}
-                             ({})
-                             VALUES ({}
-                             ST_GEOMFROMTEXT('MULTIPOLYGON({})', 4326))"""
+                # Build our insert query template for this shape record.
+                # Notice we are going to use a PostGIS function
+                # which can turn a WKT geometry into a PostGIS
+                # geometry.
+                query = """INSERT INTO {}.{}
+                                 ({})
+                                 VALUES ({}
+                                 ST_GEOMFROMTEXT('POINT({})', 4326))"""
+            # if Polyline
+            elif shapetype == 3:
+                x = "("
+                parts = sr.shape.parts[1:]  # to get the beginning of each line
+                for index, item in enumerate(sr.shape.points):
+                    x += '{} {},'.format(item[0], item[1])
+                    if index + 1 in parts:
+                        x = x[:-1] + '), ('
+                x = x[:-1] + ')'
+
+                # Build our insert query template for this shape record.
+                # Notice we are going to use a PostGIS function
+                # which can turn a WKT geometry into a PostGIS
+                # geometry.
+                query = """INSERT INTO {}.{}
+                                  ({})
+                                  VALUES ({}
+                                  ST_GEOMFROMTEXT('MULTILINESTRING({})', 4326))"""
+
+            # if Polygon
+            elif shapetype == 5:
+                x = "(("
+                parts = sr.shape.parts[1:] # to get the beginning of each polygon
+                for index, item in enumerate(sr.shape.points):
+                    x += '{} {},'.format(item[0], item[1])
+                    if index+1 in parts:
+                        x = x[:-1] + ')), (('
+                x = x[:-1] + '))'
+
+
+                # Build our insert query template for this shape record.
+                # Notice we are going to use a PostGIS function
+                # which can turn a WKT geometry into a PostGIS
+                # geometry.
+                query = """INSERT INTO {}.{}
+                                 ({})
+                                 VALUES ({}
+                                 ST_GEOMFROMTEXT('MULTIPOLYGON({})', 4326))"""
+
+            else: raise NotImplementedError(
+                'shapetype: {} not implemented yet'.format(shapetype))
+
+
             # Populate our query template with actual data.
             query = query.format(schemaname, tablename, field_string,
-                                                    attributes, x)
+                                 attributes, x)
             # Insert the point data
             db_con.execution_options(autocommit=True).execute(query)
+
+    else: raise NotImplementedError('This file format is not implemented yet')
