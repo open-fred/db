@@ -2,7 +2,7 @@
 # TODO: test it with database connection
 
 import sys
-sys.path.insert(0, './../../../') # enables import od utility.io
+sys.path.insert(0, './../../../') # enables import of utility.io
 
 from utility.io import download, extraction, write_to_db, database_session
 
