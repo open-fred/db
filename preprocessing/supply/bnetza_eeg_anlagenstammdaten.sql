@@ -17,7 +17,7 @@ __author__      = "Ludwig Hülk"
 */
 
 
--- table description
+-- table
 DROP TABLE IF EXISTS    supply.bnetza_eeg_anlagenstammdaten CASCADE;
 CREATE TABLE            supply.bnetza_eeg_anlagenstammdaten (
     "id"                                            serial NOT NULL,
