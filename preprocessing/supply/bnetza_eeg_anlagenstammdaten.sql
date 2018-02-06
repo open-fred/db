@@ -2,7 +2,7 @@
 BNetzA EEG-Anlagenstammdaten
 
 Import Excel file (2017_12_Veroeff_RegDaten.xlsx) in QGIS and export to database as:
-model_draft.bnetza_eeg_anlagenstammdaten_registerdaten
+model_draft.bnetza_eeg_anlagenstammdaten
 
 __copyright__   = "© Reiner Lemoine Institut"
 __license__     = "GNU Affero General Public License Version 3 (AGPL-3.0)"
@@ -374,4 +374,4 @@ INSERT INTO supply.bnetza_eeg_anlagenstammdaten (
         cast("9.2 Wie viel Fläche wird durch die PV-Freiflächenanlage in An" AS double precision),
         cast("9.3 Wie viel der PV-Freifläche ist davon Ackerland? [ha]" AS double precision),
         geom
-    FROM    model_draft.bnetza_eeg_anlagenstammdaten_registerdaten;
+    FROM    model_draft.bnetza_eeg_anlagenstammdaten;
